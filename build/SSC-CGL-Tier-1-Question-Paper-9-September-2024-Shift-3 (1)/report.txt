@@ -1,0 +1,41 @@
+SSC-CGL-Tier-1-Question-Paper-9-September-2024-Shift-3 (1).pdf: 100/100 questions found, 0 problem(s), 0 warning(s)
+Sections: General Intelligence and Reasoning = 25 questions; General Awareness = 25 questions; Quantitative Aptitude = 25 questions; English Comprehension = 25 questions
+
+NEEDS A SCREENSHOT (24): Q1, Q6, Q10, Q11, Q14, Q16, Q19, Q23, Q25, Q47, Q52, Q53, Q57, Q59, Q60, Q61, Q62, Q65, Q66, Q69, Q70, Q71, Q73, Q75
+  Q1 (PDF page 1): option 1 has no text (probably a picture); option 2 has no text (probably a picture); option 3 has no text (probably a picture); option 4 has no text (probably a picture); contains 5 picture(s) / figure(s); mentions a table / figure / graph / data set
+  Q6 (PDF page 3): option 1 has no text (probably a picture); option 2 has no text (probably a picture); option 3 has no text (probably a picture); option 4 has no text (probably a picture); contains 5 picture(s) / figure(s); mentions a table / figure / graph / data set
+  Q10 (PDF page 4): contains 1 picture(s) / figure(s); mentions a table / figure / graph / data set
+  Q11 (PDF page 4): contains 1 picture(s) / figure(s); mentions a table / figure / graph / data set
+  Q14 (PDF page 5): contains 1 picture(s) / figure(s)
+  Q16 (PDF page 6): option 1 has no text (probably a picture); option 2 has no text (probably a picture); option 3 has no text (probably a picture); option 4 has no text (probably a picture); contains 5 picture(s) / figure(s); mentions a table / figure / graph / data set
+  Q19 (PDF page 7): contains 1 picture(s) / figure(s); mentions a table / figure / graph / data set
+  Q23 (PDF page 7): contains 1 picture(s) / figure(s); mentions a table / figure / graph / data set
+  Q25 (PDF page 8): option 1 has no text (probably a picture); option 2 has no text (probably a picture); option 3 has no text (probably a picture); option 4 has no text (probably a picture); contains 5 picture(s) / figure(s); mentions a table / figure / graph / data set
+  Q47 (PDF page 11): contains 1 picture(s) / figure(s)
+  Q52 (PDF page 12): contains 1 picture(s) / figure(s)
+  Q53 (PDF page 12): contains 1 picture(s) / figure(s)
+  Q57 (PDF page 13): option 1 has no text (probably a picture); option 2 has no text (probably a picture); option 3 has no text (probably a picture); option 4 has no text (probably a picture); contains 4 picture(s) / figure(s)
+  Q59 (PDF page 13): contains 1 picture(s) / figure(s); mentions a table / figure / graph / data set
+  Q60 (PDF page 13): contains 1 picture(s) / figure(s)
+  Q61 (PDF page 14): option 1 has no text (probably a picture); option 2 has no text (probably a picture); option 3 has no text (probably a picture); option 4 has no text (probably a picture); contains 5 picture(s) / figure(s)
+  Q62 (PDF page 14): option 1 has no text (probably a picture); option 2 has no text (probably a picture); option 3 has no text (probably a picture); option 4 has no text (probably a picture); contains 5 picture(s) / figure(s)
+  Q65 (PDF page 14): contains 1 picture(s) / figure(s)
+  Q66 (PDF page 15): contains 1 picture(s) / figure(s); mentions a table / figure / graph / data set
+  Q69 (PDF page 15): option 1 has no text (probably a picture); option 2 has no text (probably a picture); option 3 has no text (probably a picture); option 4 has no text (probably a picture); contains 5 picture(s) / figure(s)
+  Q70 (PDF page 16): equation / math font; contains math symbols (e.g. a root sign) - verify the text
+  Q71 (PDF page 16): option 1 has no text (probably a picture); option 2 has no text (probably a picture); option 3 has no text (probably a picture); option 4 has no text (probably a picture); contains 6 picture(s) / figure(s)
+  Q73 (PDF page 16): option 1 has no text (probably a picture); option 2 has no text (probably a picture); option 3 has no text (probably a picture); option 4 has no text (probably a picture); contains 4 picture(s) / figure(s); stacked lines of text (fraction or equation)
+  Q75 (PDF page 17): option 1 has no text (probably a picture); option 2 has no text (probably a picture); option 3 has no text (probably a picture); option 4 has no text (probably a picture); contains 5 picture(s) / figure(s)
+
+CHECK THE TEXT (11): Q39, Q40, Q48, Q56, Q58, Q64, Q67, Q79, Q90, Q93, Q100
+  Q39 (PDF page 10): superscript / subscript (like km2, x2, 5th) - the text may have lost it, verify
+  Q40 (PDF page 10): superscript / subscript (like km2, x2, 5th) - the text may have lost it, verify
+  Q48 (PDF page 11): superscript / subscript (like km2, x2, 5th) - the text may have lost it, verify
+  Q56 (PDF page 13): superscript / subscript (like km2, x2, 5th) - the text may have lost it, verify
+  Q58 (PDF page 13): superscript / subscript (like km2, x2, 5th) - the text may have lost it, verify
+  Q64 (PDF page 14): superscript / subscript (like km2, x2, 5th) - the text may have lost it, verify
+  Q67 (PDF page 15): contains math symbols (e.g. a root sign) - verify the text
+  Q79 (PDF page 17): contains a few drawn lines (an UNDERLINED word? a box?) - plain text loses these, verify against the PDF
+  Q90 (PDF page 19): contains a few drawn lines (an UNDERLINED word? a box?) - plain text loses these, verify against the PDF
+  Q93 (PDF page 19): contains a few drawn lines (an UNDERLINED word? a box?) - plain text loses these, verify against the PDF
+  Q100 (PDF page 21): contains a few drawn lines (an UNDERLINED word? a box?) - plain text loses these, verify against the PDF

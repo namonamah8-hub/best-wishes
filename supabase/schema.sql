@@ -48,6 +48,9 @@ alter table questions add column if not exists image_path text;   -- (for databa
 alter table questions add column if not exists image_whole boolean not null default true;
 
 -- Hindi version of each question (optional). Same question numbers, same correct answer.
+-- How options are numbered on screen: letters A-D (classic) or numbers 1-4 (SSC-style papers).
+alter table papers add column if not exists option_style text not null default 'letters' check (option_style in ('letters','numbers'));
+
 alter table questions add column if not exists question_text_hi text;
 alter table questions add column if not exists option_a_hi text;
 alter table questions add column if not exists option_b_hi text;
@@ -214,13 +217,14 @@ language plpgsql as $$
 declare pid uuid; spq int := coalesce((p->>'questions_per_section')::int, 25);
 begin
   insert into papers(title, description, source_filename, total_questions, section_count,
-                     questions_per_section, section_seconds, correct_marks, wrong_marks)
+                     questions_per_section, section_seconds, correct_marks, wrong_marks, option_style)
   values (p->>'title', p->>'description', p->>'source_filename',
           jsonb_array_length(p->'questions'),
           coalesce((p->>'section_count')::int, 4), spq,
           coalesce((p->>'section_seconds')::int, 900),
           coalesce((p->>'correct_marks')::numeric, 1),
-          coalesce((p->>'wrong_marks')::numeric, 0))
+          coalesce((p->>'wrong_marks')::numeric, 0),
+          coalesce(nullif(p->>'option_style', ''), 'letters'))
   returning id into pid;
 
   insert into questions(paper_id, question_number, section, question_text,

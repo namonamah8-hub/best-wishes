@@ -14,6 +14,7 @@ export default async function ResultDetail({ params }: { params: { id: string } 
   const { data: paper } = await db().from('papers').select('*').eq('id', a0.paper_id).single();
   const a = await syncAttempt(a0, paper as Paper);
   const rows = await buildResultRows(a, paper as Paper);
+  const labels = (paper as { option_style?: string } | null)?.option_style === 'numbers' ? ['1', '2', '3', '4'] : LETTERS;
   const tone = { CORRECT: 'text-brand-700', WRONG: 'text-red-700', UNANSWERED: 'text-slate-500' } as const;
   return (
     <div className="space-y-6">
@@ -31,7 +32,7 @@ export default async function ResultDetail({ params }: { params: { id: string } 
           <tbody className="divide-y divide-slate-100">
             {rows.map((r) => (
               <tr key={r.number}><td className="td font-medium">Q{r.number}{r.image && <a className="ml-2 text-xs font-normal text-brand-700 hover:underline" href={`/api/admin/images/${r.id}?lang=${a.lang ?? 'en'}`} target="_blank" rel="noreferrer">view</a>}</td><td className="td">{r.section}</td>
-                <td className="td">{r.yourOption === null ? '-' : LETTERS[r.yourOption]}</td><td className="td">{LETTERS[r.correctOption]}</td>
+                <td className="td">{r.yourOption === null ? '-' : labels[r.yourOption]}</td><td className="td">{labels[r.correctOption]}</td>
                 <td className={`td font-medium ${tone[r.status]}`}>{r.status === 'CORRECT' ? 'Correct' : r.status === 'WRONG' ? 'Wrong' : 'Unanswered'}</td></tr>
             ))}
           </tbody>

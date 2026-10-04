@@ -4,7 +4,9 @@ export type DraftQ = {
   question_text: string;
   options: string[];
   correct_option: number | string | null;
-  image_path?: string | null;   // set only by the offline importer (scripts/pdf_to_paper.py --upload)
+  image_path?: string | null;
+  /** true = the question/options are (partly) pictures; a WHOLE-question screenshot will carry them, so empty text is allowed. */
+  needs_image?: boolean;
 };
 export type PaperShape = { sections: number; perSection: number };
 export const DEFAULT_SHAPE: PaperShape = { sections: 4, perSection: 25 };
@@ -32,11 +34,12 @@ export function validateQuestions(qs: unknown, shape: PaperShape = DEFAULT_SHAPE
     if (!Number.isInteger(n) || n < 1 || n > expected) { errors.push(`Invalid question number: ${String(n)} (must be 1-${expected}).`); continue; }
     if (seen.has(n)) errors.push(`Question ${n}: duplicate question number.`);
     seen.add(n);
-    if (typeof raw.question_text !== 'string' || !raw.question_text.trim()) errors.push(`Question ${n}: question text is empty.`);
+    const pic = raw.needs_image === true; // text may be empty: a whole-question screenshot replaces it
+    if (typeof raw.question_text !== 'string' || (!pic && !raw.question_text.trim())) errors.push(`Question ${n}: question text is empty.`);
     else if (raw.question_text.length > 5000) errors.push(`Question ${n}: question text is too long.`);
     if (!Array.isArray(raw.options) || raw.options.length !== 4) errors.push(`Question ${n}: must have exactly 4 options.`);
     else raw.options.forEach((o, i) => {
-      if (typeof o !== 'string' || !o.trim()) errors.push(`Question ${n}: Missing option ${L[i]}.`);
+      if (typeof o !== 'string' || (!pic && !o.trim())) errors.push(`Question ${n}: Missing option ${L[i]}.`);
       else if (o.length > 2000) errors.push(`Question ${n}: option ${L[i]} is too long.`);
     });
     if (normCorrect(raw.correct_option) === null) errors.push(`Question ${n}: correct answer is missing or invalid.`);
@@ -48,7 +51,7 @@ export function validateQuestions(qs: unknown, shape: PaperShape = DEFAULT_SHAPE
 
 export type CleanPaper = {
   title: string; description: string; source_filename: string;
-  correct_marks: number; wrong_marks: number;
+  correct_marks: number; wrong_marks: number; option_style: 'letters' | 'numbers';
   section_count: number; questions_per_section: number; section_seconds: number;
   questions: { question_number: number; question_text: string; options: string[]; correct_option: number; image_path: string | null }[];
 };
@@ -79,7 +82,7 @@ export function validatePaperInput(input: Record<string, unknown>, shape: PaperS
   return {
     errors,
     clean: {
-      title, correct_marks: correct, wrong_marks: wrong,
+      title, correct_marks: correct, wrong_marks: wrong, option_style: input.option_style === 'numbers' ? 'numbers' : 'letters',
       description: typeof input.description === 'string' ? input.description.trim().slice(0, 1000) : '',
       source_filename: typeof input.source_filename === 'string' ? input.source_filename.slice(0, 255) : '',
       section_count: shape.sections, questions_per_section: shape.perSection, section_seconds: ss,

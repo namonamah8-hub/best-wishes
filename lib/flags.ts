@@ -11,8 +11,9 @@ export function textFlags(q: { question_text: string; options: string[] }): Flag
   const out: Flag[] = [];
   const t = q.question_text || '';
   const all = [t, ...(q.options || [])].join('\n');
-  if (/\b(table|figure|diagram|graph|chart|pie|histogram|venn|caselet|image|picture|shown below|given below|following data)\b/i.test(t))
+  if (/\b(table|figure|diagram|graph|chart|pie|histogram|venn|caselet|image|picture|following data|data given|given data|shown in the)\b/i.test(t))
     out.push({ level: 'image', reason: 'mentions a table / figure / graph / data set' });
+  if (!t.trim()) out.push({ level: 'image', reason: 'question text is empty (the question may be a picture)' });
   if ((q.options || []).some((o) => !o || !o.trim())) out.push({ level: 'image', reason: 'an option is empty (options may be pictures)' });
   if (/\uFFFD/.test(all)) out.push({ level: 'image', reason: 'unreadable characters (broken font / equation)' });
   if (/[\uE000-\uF8FF]/.test(all)) out.push({ level: 'image', reason: 'private-use characters (equation font)' });

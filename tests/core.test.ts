@@ -85,3 +85,16 @@ test('language: Hindi only usable when text is complete or a whole screenshot ex
   assert.equal(hindiComplete({ ...base, image_path_hi: 'x/hi-q001.png', image_whole_hi: false }), false); // figure-only needs text
   assert.equal(view({ ...base, image_path: 'en.png' }, 'hi').imagePath, null); // English image never leaks into Hindi
 });
+
+test('pictures: empty text is allowed only for questions marked needs_image; option_style is carried through', () => {
+  const sample = JSON.parse(fs.readFileSync('data/sample-paper.json', 'utf8'));
+  const pic = JSON.parse(JSON.stringify(sample));
+  pic.questions[0].question_text = ''; pic.questions[0].options = ['', '', '', ''];
+  assert.ok(validatePaperInput(pic).errors.length > 0);                 // empty text without needs_image -> rejected
+  pic.questions[0].needs_image = true;
+  assert.deepEqual(validatePaperInput(pic).errors, []);                  // declared picture question -> accepted
+  assert.equal(validatePaperInput({ ...pic, option_style: 'numbers' }).clean?.option_style, 'numbers');
+  assert.equal(validatePaperInput(pic).clean?.option_style, 'letters');
+  pic.questions[1].correct_option = null; pic.questions[1].needs_image = true;
+  assert.ok(validatePaperInput(pic).errors.some((e: string) => /Question 2/.test(e)));   // the answer is ALWAYS required
+});

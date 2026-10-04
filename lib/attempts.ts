@@ -6,7 +6,7 @@ import { asLang, view } from './lang';
 export type Paper = {
   id: string; title: string; description: string | null; total_questions: number;
   section_count: number; questions_per_section: number; section_seconds: number;
-  correct_marks: number; wrong_marks: number;
+  correct_marks: number; wrong_marks: number; option_style?: string;
 };
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Attempt = Record<string, any>;

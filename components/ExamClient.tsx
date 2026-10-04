@@ -6,7 +6,7 @@ type Paper = { id: string; title: string; totalQuestions: number; sections: numb
 type Q = { id: string; number: number; text: string; options: string[]; image: string | null; imageWhole: boolean };
 type Sec = { number: number; state: 'locked' | 'current' | 'upcoming'; answered: number; total: number };
 type State = {
-  section: number; sectionCount: number; sectionEndsAt: number; examEndsAt: number; serverNow: number;
+  optionLabels?: string[]; section: number; sectionCount: number; sectionEndsAt: number; examEndsAt: number; serverNow: number;
   paperTitle: string; candidateName: string; questions: Q[]; answers: Record<string, number>; sections: Sec[];
 };
 const L = ['A', 'B', 'C', 'D'];
@@ -189,6 +189,7 @@ export default function ExamClient({ paper, candidateName, initialAttemptId, has
 
   /* ---------------- exam screen ---------------- */
   const q = st.questions[Math.min(idx, st.questions.length - 1)];
+  const labels = st.optionLabels ?? L;
   const whole = !!q.image && q.imageWhole; // screenshot IS the whole question -> show only A-D buttons
   const urgent = remaining <= 60;
   const lastSection = st.section === st.sectionCount;
@@ -232,7 +233,7 @@ export default function ExamClient({ paper, candidateName, initialAttemptId, has
               return (
                 <button key={i} role="radio" aria-checked={on} onClick={() => choose(q, i)}
                   className={`flex w-full items-center gap-3 rounded-xl border-2 px-4 py-3 text-left transition ${whole ? 'justify-center' : 'items-start'} ${on ? 'border-brand-600 bg-brand-50' : 'border-slate-200 bg-white hover:border-slate-400'}`}>
-                  <span className={`grid h-6 w-6 shrink-0 place-items-center rounded-full border-2 text-xs font-bold ${on ? 'border-brand-700 bg-brand-700 text-white' : 'border-slate-400 text-slate-600'}`}>{L[i]}</span>
+                  <span className={`grid h-6 w-6 shrink-0 place-items-center rounded-full border-2 text-xs font-bold ${on ? 'border-brand-700 bg-brand-700 text-white' : 'border-slate-400 text-slate-600'}`}>{labels[i]}</span>
                   {!whole && <span className="text-base">{o}</span>}
                 </button>
               );

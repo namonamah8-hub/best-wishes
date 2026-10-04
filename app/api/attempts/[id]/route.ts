@@ -44,6 +44,7 @@ export const GET = handle(async (_req, { params }) => {
     section: t.section, sectionCount: paper.section_count, sectionSeconds: paper.section_seconds,
     sectionEndsAt: t.sectionEndsAtMs, examEndsAt: t.examEndsAtMs,
     paperTitle: paper.title, candidateName: a.candidate_name,
+    optionLabels: paper.option_style === 'numbers' ? ['1', '2', '3', '4'] : ['A', 'B', 'C', 'D'],
     questions: qs.map((q) => {
       const v = view(q, lang);
       return {

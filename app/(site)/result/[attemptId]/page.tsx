@@ -20,6 +20,7 @@ export default async function ResultPage({ params }: { params: { attemptId: stri
   const rows = await buildResultRows(a, loaded.paper);
   const wrong = rows.filter((r) => r.status === 'WRONG');
   const skipped = rows.filter((r) => r.status === 'UNANSWERED').map((r) => r.number);
+  const labels = loaded.paper.option_style === 'numbers' ? ['1', '2', '3', '4'] : LETTERS;
   const total = loaded.paper.total_questions * Number(loaded.paper.correct_marks);
   const stats: { section: number; correct: number; wrong: number; unanswered: number }[] = a.section_stats ?? [];
 
@@ -68,8 +69,8 @@ export default async function ResultPage({ params }: { params: { attemptId: stri
                   <img src={`/api/attempts/${a.id}/image/${r.id}`} alt={`Question ${r.number}`} loading="lazy" className="mt-2 max-w-full rounded-lg border border-slate-200" />
                 )}
                 <div className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
-                  <p className="rounded-lg bg-red-50 px-3 py-2 text-red-900"><b>Your answer: {LETTERS[r.yourOption!]}</b>{!r.imageWhole && <> &mdash; {r.options[r.yourOption!]}</>}</p>
-                  <p className="rounded-lg bg-brand-50 px-3 py-2 text-brand-900"><b>Correct answer: {LETTERS[r.correctOption]}</b>{!r.imageWhole && <> &mdash; {r.options[r.correctOption]}</>}</p>
+                  <p className="rounded-lg bg-red-50 px-3 py-2 text-red-900"><b>Your answer: {labels[r.yourOption!]}</b>{!r.imageWhole && <> &mdash; {r.options[r.yourOption!]}</>}</p>
+                  <p className="rounded-lg bg-brand-50 px-3 py-2 text-brand-900"><b>Correct answer: {labels[r.correctOption]}</b>{!r.imageWhole && <> &mdash; {r.options[r.correctOption]}</>}</p>
                 </div>
               </div>
             ))}

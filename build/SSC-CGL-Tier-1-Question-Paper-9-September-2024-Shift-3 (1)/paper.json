@@ -1,0 +1,1913 @@
+{
+ "title": "SSC CGL Tier 1 Question Paper 9 September 2024 Shift 3 (1)",
+ "description": "",
+ "source_filename": "SSC-CGL-Tier-1-Question-Paper-9-September-2024-Shift-3 (1).pdf",
+ "correct_marks": 1,
+ "wrong_marks": 0,
+ "option_style": "numbers",
+ "report": {
+  "errors": [],
+  "warnings": []
+ },
+ "questions": [
+  {
+   "question_number": 1,
+   "question_text": "Select the option figure in which the given figure (X) is embedded (rotation is NOT allowed).",
+   "options": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "correct_option": 2,
+   "page": 1,
+   "section": "General Intelligence and Reasoning",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "option 1 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 2 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 3 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 4 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "contains 5 picture(s) / figure(s)"
+    },
+    {
+     "level": "image",
+     "reason": "mentions a table / figure / graph / data set"
+    }
+   ],
+   "crop": "images/q001.png"
+  },
+  {
+   "question_number": 2,
+   "question_text": "Four letter-clusters have been given, out of which three are alike in some manner and one is different. Select the letter-\ncluster that is different.\nNote: The odd one out is not based on the number of consonants/vowels or their position in the letter cluster.",
+   "options": [
+    "BEHI",
+    "TWYZ",
+    "PSUV",
+    "FIKL"
+   ],
+   "correct_option": 0,
+   "page": 2,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 3,
+   "question_text": "In a certain code language, ‘SILK’ is written as ‘TIML’ and ‘INSECT’ is written as ‘IOTEDU’. How will ‘CHANGE’ be written in\nthat language?",
+   "options": [
+    "DOIHAE",
+    "DEIOHA",
+    "DEIHAO",
+    "DIAOHE"
+   ],
+   "correct_option": 3,
+   "page": 2,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 4,
+   "question_text": "Select the set in which the numbers are related in the same way as are the numbers of the following sets.\n(NOTE: Operations should be performed on the whole numbers, without breaking down the numbers into its constituent\ndigits. E.g. 13 – Operations on 13 such as adding /deleting /multiplying etc. to 13 can be performed. Breaking down 13 into 1\nand 3 and then performing mathematical operations on 1 and 3 is not allowed.)\n(19, 456, 6)\n(16, 320, 5)",
+   "options": [
+    "(18, 378, 7)",
+    "(14, 210, 5)",
+    "(21, 504, 8)",
+    "(18, 648, 9)"
+   ],
+   "correct_option": 3,
+   "page": 2,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 5,
+   "question_text": "The position of how many letters will remain unchanged if each of the letter in the word ‘JANITOR’ is arranged in English\nalphabetical order?",
+   "options": [
+    "Three",
+    "Two",
+    "One",
+    "Zero"
+   ],
+   "correct_option": 3,
+   "page": 2,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 6,
+   "question_text": "Which figure should replace the question mark (?) if the following series were to be continued?",
+   "options": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "correct_option": 3,
+   "page": 3,
+   "section": "General Intelligence and Reasoning",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "option 1 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 2 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 3 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 4 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "contains 5 picture(s) / figure(s)"
+    },
+    {
+     "level": "image",
+     "reason": "mentions a table / figure / graph / data set"
+    }
+   ],
+   "crop": "images/q006.png"
+  },
+  {
+   "question_number": 7,
+   "question_text": "In the following number-pairs, the second number is obtained by applying certain mathematical operations to the first\nnumber. Select the set in which the numbers are related in the same way as are the numbers of the following sets.\n(NOTE : Operations should be performed on the whole numbers, without breaking down the numbers into its constituent\ndigits. E.g. 13 – Operations on 13 such as adding /deleting /multiplying etc., to 13 can be performed. Breaking down 13 into 1\nand 3 and then performing mathematical operations on 1 and 3 is not allowed.)\n(12, 145)\n(9, 82)",
+   "options": [
+    "(16, 256)",
+    "(14, 197)",
+    "(22, 483)",
+    "(8, 69)"
+   ],
+   "correct_option": 1,
+   "page": 3,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 8,
+   "question_text": "Which of the four options will replace the question mark (?) in the following series?\nXF 11 , YI 15, ZL 19 , AO 23, ?",
+   "options": [
+    "CQ 25",
+    "BP 26",
+    "CR 25",
+    "BR 27"
+   ],
+   "correct_option": 3,
+   "page": 3,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 9,
+   "question_text": "Select the combination of letters that when sequentially placed in the blanks of the given series will complete the series.\nP _ A A _ _ Z A _V _ _ A _ _",
+   "options": [
+    "VPZZPVAP",
+    "ZPVVAPVZ",
+    "ZVPAPZAV",
+    "VZAAPVPZ"
+   ],
+   "correct_option": 2,
+   "page": 3,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 10,
+   "question_text": "How many triangles are there in the given figure?",
+   "options": [
+    "6",
+    "8",
+    "4",
+    "5"
+   ],
+   "correct_option": 1,
+   "page": 4,
+   "section": "General Intelligence and Reasoning",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "contains 1 picture(s) / figure(s)"
+    },
+    {
+     "level": "image",
+     "reason": "mentions a table / figure / graph / data set"
+    }
+   ],
+   "crop": "images/q010.png"
+  },
+  {
+   "question_number": 11,
+   "question_text": "Study the given diagram carefully and answer the question that follows. The numbers in different sections indicate the\nnumber of persons who have applied for different posts.\nWhat is the total number of persons who have applied for more than one post?",
+   "options": [
+    "21",
+    "113",
+    "15",
+    "18"
+   ],
+   "correct_option": 0,
+   "page": 4,
+   "section": "General Intelligence and Reasoning",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "contains 1 picture(s) / figure(s)"
+    },
+    {
+     "level": "image",
+     "reason": "mentions a table / figure / graph / data set"
+    }
+   ],
+   "crop": "images/q011.png"
+  },
+  {
+   "question_number": 12,
+   "question_text": "Three of the following numbers are alike in a certain way and one is different. Pick the odd one out.\n(NOTE : Operations should be performed on the whole numbers, without breaking down the numbers into its constituent\ndigits. E.g. 13 – Operations on 13 such as adding /deleting /multiplying etc., to 13 can be performed. Breaking down 13 into 1\nand 3 and then performing mathematical operations on 1 and 3 is not allowed.)",
+   "options": [
+    "36 – 84",
+    "72 – 168",
+    "66 – 154",
+    "33 – 72"
+   ],
+   "correct_option": 3,
+   "page": 4,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 13,
+   "question_text": "Select the option that is related to the fifth letter-cluster in the same way as the second letter-cluster is related to the first\nletter-cluster and the fourth letter-cluster is related to the third letter-cluster.\nCWE:ZFX ::PYT:MDI :: KIL:?",
+   "options": [
+    "PRO",
+    "RTQ",
+    "STQ",
+    "PQO"
+   ],
+   "correct_option": 1,
+   "page": 4,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 14,
+   "question_text": "",
+   "options": [
+    "47",
+    "34",
+    "24",
+    "23"
+   ],
+   "correct_option": 0,
+   "page": 5,
+   "section": "General Intelligence and Reasoning",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "contains 1 picture(s) / figure(s)"
+    }
+   ],
+   "crop": "images/q014.png"
+  },
+  {
+   "question_number": 15,
+   "question_text": "Which of the following terms will replace the question mark (?) in the given series?\nMFT, NIS, PLQ, SON, WRJ, ?",
+   "options": [
+    "RUE",
+    "BUE",
+    "BVD",
+    "BUP"
+   ],
+   "correct_option": 1,
+   "page": 5,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 16,
+   "question_text": "Select the option that will replace the question mark (?) in the figure given below to complete the pattern.",
+   "options": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "correct_option": 2,
+   "page": 6,
+   "section": "General Intelligence and Reasoning",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "option 1 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 2 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 3 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 4 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "contains 5 picture(s) / figure(s)"
+    },
+    {
+     "level": "image",
+     "reason": "mentions a table / figure / graph / data set"
+    }
+   ],
+   "crop": "images/q016.png"
+  },
+  {
+   "question_number": 17,
+   "question_text": "Select the number from the given options to complete the series.\n35, 38, 43, 50, 59, ___",
+   "options": [
+    "62",
+    "68",
+    "78",
+    "70"
+   ],
+   "correct_option": 3,
+   "page": 6,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 18,
+   "question_text": "Select the set in which the numbers are related in the same way as are the numbers of the following sets.\n(34, 47, 62)\n(119, 142, 167)\n(NOTE: Operations should be performed on the whole numbers, without breaking down the numbers into its constituent\ndigits. E.g. 13 – Operations on 13 such as adding /deleting /multiplying etc. to 13 can be performed. Breaking down 13 into 1\nand 3 and then performing mathematical operations on 1 and 3 is not allowed)",
+   "options": [
+    "(27, 38, 51)",
+    "(48, 65, 82)",
+    "(64, 78, 99)",
+    "(79, 98, 119)"
+   ],
+   "correct_option": 3,
+   "page": 6,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 19,
+   "question_text": "Six letters P, Q, R, S, T and U are written on different faces of a dice. Two positions of this dice are shown in the figure\nbelow. Find the letter on the face opposite to R.",
+   "options": [
+    "T",
+    "Q",
+    "U",
+    "S"
+   ],
+   "correct_option": 3,
+   "page": 7,
+   "section": "General Intelligence and Reasoning",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "contains 1 picture(s) / figure(s)"
+    },
+    {
+     "level": "image",
+     "reason": "mentions a table / figure / graph / data set"
+    }
+   ],
+   "crop": "images/q019.png"
+  },
+  {
+   "question_number": 20,
+   "question_text": "Which two numbers (not digits) should be interchanged to make the given equation correct?\n24 ÷ 3 – 4 × 2 + 6 × 5 +12 = 50",
+   "options": [
+    "5 and 4",
+    "4 and 3",
+    "24 and 12",
+    "3 and 2"
+   ],
+   "correct_option": 2,
+   "page": 7,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 21,
+   "question_text": "What will come in place of the question mark (?) in the following equation, if ‘+’ and ‘–’ are interchanged and ‘×’ and ‘÷’ are\ninterchanged?\n321 – 371 ÷ 22 + 216 × 6 = ?",
+   "options": [
+    "7848",
+    "7884",
+    "8747",
+    "8447"
+   ],
+   "correct_option": 3,
+   "page": 7,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 22,
+   "question_text": "In a certain code language,\nA + B means ‘A is the son of B’,\nA − B means ‘A is the sister of B’,\nA × B means ‘A is the brother of B’ and\nA ÷ B means ‘A is the mother of B’.\nBased on the above, how is T related to P if ‘P ÷ Q × R − M + T’?",
+   "options": [
+    "Son",
+    "Brother",
+    "Father",
+    "Husband"
+   ],
+   "correct_option": 3,
+   "page": 7,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 23,
+   "question_text": "Six letters A, M, R, S, Y and Q are written on different faces of a dice. Two positions of this dice are shown in the figures\nbelow. Find the letter on the face opposite to S.",
+   "options": [
+    "Q",
+    "M",
+    "Y",
+    "A"
+   ],
+   "correct_option": 3,
+   "page": 7,
+   "section": "General Intelligence and Reasoning",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "contains 1 picture(s) / figure(s)"
+    },
+    {
+     "level": "image",
+     "reason": "mentions a table / figure / graph / data set"
+    }
+   ],
+   "crop": "images/q023.png"
+  },
+  {
+   "question_number": 24,
+   "question_text": "In a certain code language, ‘SET’ is coded as ‘37’ and ‘MIX’ is coded as ‘35’. How will ‘WAR’ be coded in that language?",
+   "options": [
+    "39",
+    "21",
+    "32",
+    "29"
+   ],
+   "correct_option": 0,
+   "page": 8,
+   "section": "General Intelligence and Reasoning",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 25,
+   "question_text": "Identify the figure given in the options which when put in place of the question mark (?) will logically complete the series?",
+   "options": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "correct_option": 0,
+   "page": 8,
+   "section": "General Intelligence and Reasoning",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "option 1 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 2 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 3 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 4 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "contains 5 picture(s) / figure(s)"
+    },
+    {
+     "level": "image",
+     "reason": "mentions a table / figure / graph / data set"
+    }
+   ],
+   "crop": "images/q025.png"
+  },
+  {
+   "question_number": 26,
+   "question_text": "Who among the following devised the system of ‘Subsidiary Alliance’?",
+   "options": [
+    "Lord Wellesley",
+    "Lord Canning",
+    "Lord William Bentinck",
+    "Lord Dalhousie"
+   ],
+   "correct_option": 0,
+   "page": 8,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 27,
+   "question_text": "At which Olympics was Kho-Kho featured in an exhibition in the main stadium?",
+   "options": [
+    "1936",
+    "1932",
+    "2008",
+    "2016"
+   ],
+   "correct_option": 0,
+   "page": 8,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 28,
+   "question_text": "Which of the following statements is INCORRECT?",
+   "options": [
+    "Fats and oils get reduced over time and smell bad.",
+    "Fats and oils are oxidised, they become rancid.",
+    "Antioxidants are added to foods containing fats and oil to prevent oxidation.",
+    "Chips manufacturers usually flush bags of chips with Nitrogen to prevent the chips from getting ranicid."
+   ],
+   "correct_option": 0,
+   "page": 9,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 29,
+   "question_text": "Hot local wind that flows over north India in summer is known as:",
+   "options": [
+    "Loo",
+    "Chinook",
+    "Mango showers",
+    "Purga"
+   ],
+   "correct_option": 0,
+   "page": 9,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 30,
+   "question_text": "‘Nuakhai’ is the state festival of:",
+   "options": [
+    "Meghalaya",
+    "Odisha",
+    "Tamil Nadu",
+    "Bihar"
+   ],
+   "correct_option": 1,
+   "page": 9,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 31,
+   "question_text": "Which Article of the Indian Constitution prohibits providing of any religious instruction in the educational institutions\nmaintained by the State?",
+   "options": [
+    "Article 29",
+    "Article 28",
+    "Article 30",
+    "Article 31"
+   ],
+   "correct_option": 1,
+   "page": 9,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 32,
+   "question_text": "As per the definition of Census of India, a ‘marginal worker’ is a person who works for:",
+   "options": [
+    "less than 183 days (or six months) in a year",
+    "more than 183 days (or six months) in a year",
+    "eight months in a year",
+    "83 days in a year"
+   ],
+   "correct_option": 0,
+   "page": 9,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 33,
+   "question_text": "In which year was the 'Naye Bharat Ke Sapne' campaign launched by Meta and the Ministry of Women?",
+   "options": [
+    "2022",
+    "2023",
+    "2020",
+    "2021"
+   ],
+   "correct_option": 1,
+   "page": 9,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 34,
+   "question_text": "Under which of the following Acts was the power to rule India, transferred from the English East India Company to the\nBritish Crown?",
+   "options": [
+    "Charter Act of 1833",
+    "Regulating Act 1773",
+    "Pitt's India Act 1784",
+    "Government of India Act 1858"
+   ],
+   "correct_option": 3,
+   "page": 9,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 35,
+   "question_text": "Which of the following is an inactivated (killed) polio vaccine developed in 1952?",
+   "options": [
+    "Salk vaccine",
+    "Imvanex vaccine",
+    "HDCV vaccine",
+    "TAB vaccine"
+   ],
+   "correct_option": 0,
+   "page": 9,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 36,
+   "question_text": "Which of the following statements is correct?.",
+   "options": [
+    "The five-year plan focuses mostly on private intervention in the economy.",
+    "The five-year plan always focused on the growth of the tertiary sector.",
+    "The five-year plan permits long-term intervention by the government in the economy.",
+    "A five-year plan always stresses market-oriented activities."
+   ],
+   "correct_option": 2,
+   "page": 10,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 37,
+   "question_text": "What is the length of Indian Railways network, according to Railway Yearbook 2019-20?",
+   "options": [
+    "67,956 km",
+    "1,604 km",
+    "63,950 km",
+    "2,402 km"
+   ],
+   "correct_option": 0,
+   "page": 10,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 38,
+   "question_text": "In Pradhan Mantri Gramin Awaas yojana, the cost of unit assistance is shared between Central and State Governments in\nthe ratio ___________ in plain areas.",
+   "options": [
+    "60 : 40",
+    "40 : 60",
+    "90 : 10",
+    "30 : 70"
+   ],
+   "correct_option": 0,
+   "page": 10,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 39,
+   "question_text": "Silappathikaram (the Jewelled Anklet), the earliest epic poem in Tamil was written in the 5th - 6th Century CE by _________.",
+   "options": [
+    "Tolkappiyar",
+    "Ilango Adigal",
+    "Sittalai Sattanar",
+    "Tirumalisai Alwar"
+   ],
+   "correct_option": 1,
+   "page": 10,
+   "section": "General Awareness",
+   "flags": [
+    {
+     "level": "check",
+     "reason": "superscript / subscript (like km2, x2, 5th) - the text may have lost it, verify"
+    }
+   ],
+   "crop": "images/q039.png"
+  },
+  {
+   "question_number": 40,
+   "question_text": "Which of the following is the largest crustal plate on Earth with an area of over 103,000,000 km2?",
+   "options": [
+    "South American plate",
+    "African plate",
+    "Eurasian plate",
+    "Pacific plate"
+   ],
+   "correct_option": 3,
+   "page": 10,
+   "section": "General Awareness",
+   "flags": [
+    {
+     "level": "check",
+     "reason": "superscript / subscript (like km2, x2, 5th) - the text may have lost it, verify"
+    }
+   ],
+   "crop": "images/q040.png"
+  },
+  {
+   "question_number": 41,
+   "question_text": "Which of the following personalities is a Padma Shri awardee folk singer from the state of Uttar Pradesh?",
+   "options": [
+    "Ila Arun",
+    "Ajita Srivastava",
+    "Gurmeet Bawa",
+    "Teejan Bai"
+   ],
+   "correct_option": 1,
+   "page": 10,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 42,
+   "question_text": "Which of the following countries won the first men’s Asian Hockey Championship trophy?",
+   "options": [
+    "Japan",
+    "China",
+    "India",
+    "Pakistan"
+   ],
+   "correct_option": 2,
+   "page": 10,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 43,
+   "question_text": "Which of the following goods needs further transformation in the economic process?",
+   "options": [
+    "Consumer durable goods",
+    "Finished goods",
+    "Intermediate goods",
+    "Capital goods"
+   ],
+   "correct_option": 2,
+   "page": 10,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 44,
+   "question_text": "In which of the following states is the Nrityagram, an Odissi dance institution, located?",
+   "options": [
+    "Kerala",
+    "Karnataka",
+    "Tamil Nadu",
+    "Maharashtra"
+   ],
+   "correct_option": 1,
+   "page": 11,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 45,
+   "question_text": "Who among the following was the youngest instrumentalist to be awarded the Padma Bhushan, the third highest civilian\naward of India in 2002?",
+   "options": [
+    "Pandit Ravi Shankar",
+    "Ustad Zakir Hussain",
+    "Pandit Bhimsen Joshi",
+    "Ustad Bismillah Khan"
+   ],
+   "correct_option": 1,
+   "page": 11,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 46,
+   "question_text": "Who was the revenue minister during the reign of Akbar?",
+   "options": [
+    "Todar Mal",
+    "Abdul Rahim",
+    "Mulla Do-Piyaza",
+    "Tansen"
+   ],
+   "correct_option": 0,
+   "page": 11,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 47,
+   "question_text": "Which of the following Illustrations shows the mitochondrion’s structural details?",
+   "options": [
+    "d",
+    "b",
+    "c",
+    "a"
+   ],
+   "correct_option": 1,
+   "page": 11,
+   "section": "General Awareness",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "contains 1 picture(s) / figure(s)"
+    }
+   ],
+   "crop": "images/q047.png"
+  },
+  {
+   "question_number": 48,
+   "question_text": "Which of the following is a straight-chain alkyl carboxylic acid with the chemical formula CH CH CH CO H?\n3 2 2 2",
+   "options": [
+    "Methanoic acid",
+    "Propionic acid",
+    "Ethanoic acid",
+    "Butyric acid"
+   ],
+   "correct_option": 3,
+   "page": 11,
+   "section": "General Awareness",
+   "flags": [
+    {
+     "level": "check",
+     "reason": "superscript / subscript (like km2, x2, 5th) - the text may have lost it, verify"
+    }
+   ],
+   "crop": "images/q048.png"
+  },
+  {
+   "question_number": 49,
+   "question_text": "Article 77 of the Indian Constitution deals with the __________.",
+   "options": [
+    "term of office of the Vice-President",
+    "Vice-President of India",
+    "oath of office by the Vice-President",
+    "conduct of business of the Government of India"
+   ],
+   "correct_option": 3,
+   "page": 11,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 50,
+   "question_text": "The Muslim Women (Protection of Rights on Marriage) Act, 2019 deals with subsistence allowance in which of the following\nSections?",
+   "options": [
+    "Section 5",
+    "Section 6",
+    "Section 7",
+    "Section 4"
+   ],
+   "correct_option": 0,
+   "page": 11,
+   "section": "General Awareness",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 51,
+   "question_text": "A stock portfolio consists of four stocks. Stock A represents 20% of the portfolio and has a return of 6%. Stock B represents\n30% of the portfolio and has a return of 8%. Stock C represents 20% of the portfolio and has a return of 4%. Stock D\nrepresents the remaining 30% of the portfolio and has a negative-return of 5%. What is the average return of the portfolio?",
+   "options": [
+    "2.9%",
+    "2.6%",
+    "3.2%",
+    "3.4%"
+   ],
+   "correct_option": 0,
+   "page": 12,
+   "section": "Quantitative Aptitude",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 52,
+   "question_text": "",
+   "options": [
+    "13",
+    "9",
+    "0",
+    "26"
+   ],
+   "correct_option": 2,
+   "page": 12,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "contains 1 picture(s) / figure(s)"
+    }
+   ],
+   "crop": "images/q052.png"
+  },
+  {
+   "question_number": 53,
+   "question_text": "",
+   "options": [
+    "38,450",
+    "42,577",
+    "40,263",
+    "39,376"
+   ],
+   "correct_option": 3,
+   "page": 12,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "contains 1 picture(s) / figure(s)"
+    }
+   ],
+   "crop": "images/q053.png"
+  },
+  {
+   "question_number": 54,
+   "question_text": "In a clearance sale, a sari whose marked price was ₹10,490 is now sold for ₹9,441. What is the discount percentage on the\nsari?",
+   "options": [
+    "10%",
+    "15%",
+    "18%",
+    "12%"
+   ],
+   "correct_option": 0,
+   "page": 12,
+   "section": "Quantitative Aptitude",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 55,
+   "question_text": "A pipe can fill an overhead tank in 12 hours. But due to a leak at the bottom, it is filled in 18 hours. If the tank is full, how\nmuch time will the leak take to empty it?",
+   "options": [
+    "3.6 hours",
+    "63 hours",
+    "7.2 hours",
+    "36 hours"
+   ],
+   "correct_option": 3,
+   "page": 12,
+   "section": "Quantitative Aptitude",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 56,
+   "question_text": "Two triangles EFG and HIJ are congruent. If the area of ΔEFG is 124 cm2, then the area of ΔHIJ will be:",
+   "options": [
+    "124 cm2",
+    "248 cm2",
+    "62 cm2",
+    "31 cm2"
+   ],
+   "correct_option": 0,
+   "page": 13,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "check",
+     "reason": "superscript / subscript (like km2, x2, 5th) - the text may have lost it, verify"
+    }
+   ],
+   "crop": "images/q056.png"
+  },
+  {
+   "question_number": 57,
+   "question_text": "Let a + b = 2c, then which of the following expressions is true?",
+   "options": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "correct_option": 2,
+   "page": 13,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "option 1 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 2 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 3 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 4 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "contains 4 picture(s) / figure(s)"
+    }
+   ],
+   "crop": "images/q057.png"
+  },
+  {
+   "question_number": 58,
+   "question_text": "If the equations 4x + (k − 2)y + 3 = 0 and (k − 2)x + 9y − 5 = 0 (k > 0) are parallel, then find the value of k2 + 6.",
+   "options": [
+    "68",
+    "70",
+    "72",
+    "64"
+   ],
+   "correct_option": 1,
+   "page": 13,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "check",
+     "reason": "superscript / subscript (like km2, x2, 5th) - the text may have lost it, verify"
+    }
+   ],
+   "crop": "images/q058.png"
+  },
+  {
+   "question_number": 59,
+   "question_text": "Study the given table and answer the question that follows.\nThe given table shows the production of T-shirts by four companies i.e., C1, C2, C3 and C4 over the four years.\nWhich company had the maximum average production of T-shirts during these four years?",
+   "options": [
+    "C1",
+    "C3",
+    "C2",
+    "C4"
+   ],
+   "correct_option": 2,
+   "page": 13,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "contains 1 picture(s) / figure(s)"
+    },
+    {
+     "level": "image",
+     "reason": "mentions a table / figure / graph / data set"
+    }
+   ],
+   "crop": "images/q059.png"
+  },
+  {
+   "question_number": 60,
+   "question_text": "",
+   "options": [
+    "7",
+    "5",
+    "9",
+    "11"
+   ],
+   "correct_option": 2,
+   "page": 13,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "contains 1 picture(s) / figure(s)"
+    }
+   ],
+   "crop": "images/q060.png"
+  },
+  {
+   "question_number": 61,
+   "question_text": "",
+   "options": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "correct_option": 3,
+   "page": 14,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "option 1 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 2 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 3 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 4 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "contains 5 picture(s) / figure(s)"
+    }
+   ],
+   "crop": "images/q061.png"
+  },
+  {
+   "question_number": 62,
+   "question_text": "",
+   "options": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "correct_option": 2,
+   "page": 14,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "option 1 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 2 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 3 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 4 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "contains 5 picture(s) / figure(s)"
+    }
+   ],
+   "crop": "images/q062.png"
+  },
+  {
+   "question_number": 63,
+   "question_text": "Ramesh has ₹18,000. He deposited ₹7,000 in a bank at the rate of 5% per annum and ₹6,000 in other bank at the rate of 6%\nper annum simple interest. If he received ₹1,160 as simple interest at the end of one year, then the rate of interest per annum\non rest of the capital is equal to:",
+   "options": [
+    "10%",
+    "11%",
+    "9%",
+    "8%"
+   ],
+   "correct_option": 2,
+   "page": 14,
+   "section": "Quantitative Aptitude",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 64,
+   "question_text": "If the length, breadth, and height of a cuboid is 8 cm, 4 cm, and 6 cm, respectively, then the volume (in cm3) of the cuboid is:",
+   "options": [
+    "218",
+    "192",
+    "96",
+    "172"
+   ],
+   "correct_option": 1,
+   "page": 14,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "check",
+     "reason": "superscript / subscript (like km2, x2, 5th) - the text may have lost it, verify"
+    }
+   ],
+   "crop": "images/q064.png"
+  },
+  {
+   "question_number": 65,
+   "question_text": "",
+   "options": [
+    "25.93%",
+    "26.39%",
+    "28.26%",
+    "27.62%"
+   ],
+   "correct_option": 0,
+   "page": 14,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "contains 1 picture(s) / figure(s)"
+    }
+   ],
+   "crop": "images/q065.png"
+  },
+  {
+   "question_number": 66,
+   "question_text": "Study the given graph and answer the question that follows.\nThe graph shows the production of refrigerators by three companies in 2018.\nThe refrigerators produced by company C form what percentage of the total production?",
+   "options": [
+    "34.35%",
+    "32.56%",
+    "30.25%",
+    "31.25%"
+   ],
+   "correct_option": 3,
+   "page": 15,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "contains 1 picture(s) / figure(s)"
+    },
+    {
+     "level": "image",
+     "reason": "mentions a table / figure / graph / data set"
+    }
+   ],
+   "crop": "images/q066.png"
+  },
+  {
+   "question_number": 67,
+   "question_text": "What is the perimeter (in cm, rounded off to one decimal place) of the sector of a circle with a radius of 10 cm and of angle\n30°?\n(Use π = 3.14)",
+   "options": [
+    "20.4",
+    "35.7",
+    "82.8",
+    "25.2"
+   ],
+   "correct_option": 3,
+   "page": 15,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "check",
+     "reason": "contains math symbols (e.g. a root sign) - verify the text"
+    }
+   ],
+   "crop": "images/q067.png"
+  },
+  {
+   "question_number": 68,
+   "question_text": "If 7845K854 is divisible by 11, then what is the value of K?",
+   "options": [
+    "6",
+    "9",
+    "7",
+    "8"
+   ],
+   "correct_option": 1,
+   "page": 15,
+   "section": "Quantitative Aptitude",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 69,
+   "question_text": "",
+   "options": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "correct_option": 0,
+   "page": 15,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "option 1 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 2 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 3 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 4 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "contains 5 picture(s) / figure(s)"
+    }
+   ],
+   "crop": "images/q069.png"
+  },
+  {
+   "question_number": 70,
+   "question_text": "In aΔPQR, the bisectors of∠Q and∠R meet at point O, inside the triangle. If∠QOR = 107°, then the measure of∠P is:",
+   "options": [
+    "40°",
+    "23°",
+    "17°",
+    "34°"
+   ],
+   "correct_option": 3,
+   "page": 16,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "equation / math font"
+    },
+    {
+     "level": "check",
+     "reason": "contains math symbols (e.g. a root sign) - verify the text"
+    }
+   ],
+   "crop": "images/q070.png"
+  },
+  {
+   "question_number": 71,
+   "question_text": "If then the value of is:",
+   "options": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "correct_option": 1,
+   "page": 16,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "option 1 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 2 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 3 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 4 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "contains 6 picture(s) / figure(s)"
+    }
+   ],
+   "crop": "images/q071.png"
+  },
+  {
+   "question_number": 72,
+   "question_text": "A number is first increased by 12% and then increased by 23%. The number, so obtained, is now decreased by 34%. What is\nthe net increase or decrease percent in the original number (nearest to an integer)?",
+   "options": [
+    "10% increase",
+    "9% decrease",
+    "10% decrease",
+    "9% increase"
+   ],
+   "correct_option": 1,
+   "page": 16,
+   "section": "Quantitative Aptitude",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 73,
+   "question_text": "A dishonest shopkeeper claims to sell salt at a rate of ₹25/kg. The cost price of the salt is ₹25/kg. Not satisfied with this, he\ntries to make profit by removing 200 gm from each kg. What is the shopkeeper’s gain percentage?",
+   "options": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "correct_option": 1,
+   "page": 16,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "option 1 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 2 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 3 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 4 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "contains 4 picture(s) / figure(s)"
+    },
+    {
+     "level": "image",
+     "reason": "stacked lines of text (fraction or equation)"
+    }
+   ],
+   "crop": "images/q073.png"
+  },
+  {
+   "question_number": 74,
+   "question_text": "A thief noticed a policeman at a distance of 600 metres. The thief started running and the policeman chased him. The thief\nand policeman are running at speeds of 12 km/h and 15 km/h, respectively. Find the time (in minutes) required for the\npoliceman to catch the thief.",
+   "options": [
+    "8",
+    "10",
+    "12",
+    "15"
+   ],
+   "correct_option": 2,
+   "page": 16,
+   "section": "Quantitative Aptitude",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 75,
+   "question_text": "",
+   "options": [
+    "",
+    "",
+    "",
+    ""
+   ],
+   "correct_option": 1,
+   "page": 17,
+   "section": "Quantitative Aptitude",
+   "flags": [
+    {
+     "level": "image",
+     "reason": "option 1 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 2 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 3 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "option 4 has no text (probably a picture)"
+    },
+    {
+     "level": "image",
+     "reason": "contains 5 picture(s) / figure(s)"
+    }
+   ],
+   "crop": "images/q075.png"
+  },
+  {
+   "question_number": 76,
+   "question_text": "Select the option that can be used as a one-word substitute for the given group of words.\nMorbid compulsion to consume alcohol continuously",
+   "options": [
+    "Satyromania",
+    "Maniac",
+    "Kleptomania",
+    "Dipsomania"
+   ],
+   "correct_option": 3,
+   "page": 17,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 77,
+   "question_text": "Select the option that expresses the given sentence in active voice.\nThe painting was admired by art enthusiasts from around the world.",
+   "options": [
+    "The painting was being admired by art enthusiasts from around the world.",
+    "Art enthusiasts from around the world admired the painting.",
+    "Art enthusiasts from around the world have admired the painting.",
+    "The painting has been admired by art enthusiasts from around the world."
+   ],
+   "correct_option": 1,
+   "page": 17,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 78,
+   "question_text": "Select the word segment that can substitute the bracketed word segment correctly and complete the sentence meaningfully.\n(Each participant have) performed well.",
+   "options": [
+    "Each participant was",
+    "Each participant has",
+    "Each participant have been",
+    "Each participant were"
+   ],
+   "correct_option": 1,
+   "page": 17,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 79,
+   "question_text": "Select the most appropriate meaning of the underlined idiom.\nFatima was at her wits’ end trying to decide on a serene place for spending the holidays in.",
+   "options": [
+    "So worried, confused or annoyed that she does not know what to do next",
+    "So worried, confused or annoyed that she became unconscious",
+    "So calm and composed that she knows what to do next",
+    "So worried, confused or annoyed that she insulted others for no reason"
+   ],
+   "correct_option": 0,
+   "page": 17,
+   "section": "English Comprehension",
+   "flags": [
+    {
+     "level": "check",
+     "reason": "contains a few drawn lines (an UNDERLINED word? a box?) - plain text loses these, verify against the PDF"
+    }
+   ],
+   "crop": "images/q079.png"
+  },
+  {
+   "question_number": 80,
+   "question_text": "Parts of a sentence are given below in jumbled order. Arrange the parts in the correct order to form a meaningful sentence.\nP. having the opportunity of observing people’s\nQ. we respect and appreciate their point of views\nR. the advantage of travelling different places and\nS. culture, custom and lifestyle, is that",
+   "options": [
+    "RQPS",
+    "PSQR",
+    "RPSQ",
+    "SQPR"
+   ],
+   "correct_option": 2,
+   "page": 17,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 81,
+   "question_text": "Select the INCORRECTLY spelt word.",
+   "options": [
+    "Accommodate",
+    "Mischievious",
+    "Millennium",
+    "Privilege"
+   ],
+   "correct_option": 1,
+   "page": 18,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 82,
+   "question_text": "Select the most appropriate synonym of the given word.\nTaut",
+   "options": [
+    "Slack",
+    "Tight",
+    "Torn",
+    "Flaccid"
+   ],
+   "correct_option": 1,
+   "page": 18,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 83,
+   "question_text": "Select the option that expresses the given sentence in active voice.\nHe will be made President by the people.",
+   "options": [
+    "People will be making him the President.",
+    "The people will make him President.",
+    "By the people, he shall be made the President.",
+    "He will be made President by the people."
+   ],
+   "correct_option": 1,
+   "page": 18,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 84,
+   "question_text": "Which of the following idioms means ‘to steal from a shop’?",
+   "options": [
+    "Golden opportunity",
+    "Green thumb",
+    "Five-finger discount",
+    "Black sheep"
+   ],
+   "correct_option": 2,
+   "page": 18,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 85,
+   "question_text": "Parts of the following sentence have been given as options. Select the option that contains an error.\nI are dancing with my husband at my sister’s wedding.",
+   "options": [
+    "husband at my",
+    "sister’s wedding",
+    "with my",
+    "I are dancing"
+   ],
+   "correct_option": 3,
+   "page": 18,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 86,
+   "question_text": "Parts of the following sentence have been given as options. Select the option that contains an error.\nThe tea at this café is best than at the Costa Café in our office.",
+   "options": [
+    "at the Costa Café",
+    "The tea at this café",
+    "is best than",
+    "in our office"
+   ],
+   "correct_option": 2,
+   "page": 18,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 87,
+   "question_text": "Select the most appropriate ANTONYM of the given word.\nMiserable",
+   "options": [
+    "Melodious",
+    "Settled",
+    "Restrained",
+    "Cheerful"
+   ],
+   "correct_option": 3,
+   "page": 18,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 88,
+   "question_text": "Select the most appropriate synonym of the given word.\nConfiscate",
+   "options": [
+    "Restock",
+    "Destroy",
+    "Seize",
+    "Titivate"
+   ],
+   "correct_option": 2,
+   "page": 18,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 89,
+   "question_text": "Select the most appropriate meaning of the given word.\nEdible",
+   "options": [
+    "noisome",
+    "mortal",
+    "noxious",
+    "nutritive"
+   ],
+   "correct_option": 3,
+   "page": 19,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 90,
+   "question_text": "Select the most appropriate option to substitute the underlined segment in the given sentence.\nThere are many factories in the operative area of the city.",
+   "options": [
+    "industrial",
+    "serviceable",
+    "industrious",
+    "mechanical"
+   ],
+   "correct_option": 0,
+   "page": 19,
+   "section": "English Comprehension",
+   "flags": [
+    {
+     "level": "check",
+     "reason": "contains a few drawn lines (an UNDERLINED word? a box?) - plain text loses these, verify against the PDF"
+    }
+   ],
+   "crop": "images/q090.png"
+  },
+  {
+   "question_number": 91,
+   "question_text": "Select the most appropriate synonym of the bracketed word in the following sentence to fill in the blank.\nThe elaborate syllabi had to be ________(summarised) to make a presentation in the UGC assessment meeting.",
+   "options": [
+    "expanded",
+    "recapitulated",
+    "prolonged",
+    "lengthened"
+   ],
+   "correct_option": 1,
+   "page": 19,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 92,
+   "question_text": "Identify the INCORRECTLY spelt word in the following sentence and select its correct spelling from the given options.\nI receieved a parcel in the mail today.",
+   "options": [
+    "received",
+    "recived",
+    "recieved",
+    "receaved"
+   ],
+   "correct_option": 0,
+   "page": 19,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 93,
+   "question_text": "Select the option that can be used as a one-word substitute for the underlined group of words.\nThe question papers are placed in the lockers of the school in a way that they can’t be reached.",
+   "options": [
+    "are irrepressible",
+    "are inaccessible",
+    "are affordable",
+    "are affable"
+   ],
+   "correct_option": 1,
+   "page": 19,
+   "section": "English Comprehension",
+   "flags": [
+    {
+     "level": "check",
+     "reason": "contains a few drawn lines (an UNDERLINED word? a box?) - plain text loses these, verify against the PDF"
+    }
+   ],
+   "crop": "images/q093.png"
+  },
+  {
+   "question_number": 94,
+   "question_text": "Select the most appropriate homophone to fill in the blank.\nHe has the ________ to express his thoughts.",
+   "options": [
+    "right",
+    "ride",
+    "write",
+    "rite"
+   ],
+   "correct_option": 0,
+   "page": 19,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 95,
+   "question_text": "Select the option that can be used as a one-word substitute for the given group of words.\nAn order of law requiring people to remain indoors",
+   "options": [
+    "Restriction",
+    "Curfew",
+    "Limit",
+    "Check in"
+   ],
+   "correct_option": 1,
+   "page": 19,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 96,
+   "question_text": "Comprehension:\nIn the following passage, some words have been deleted. Read the passage carefully and select the most appropriate option to fill in\neach blank.\nTea prices in the domestic (1)__________ continue to rule high in the current year despite the expectation of a higher production as\ncompared to the previous year. During the past three months, tea prices have been (2)__________ with the prices of other\ncompanies. Unlike last year, tea prices have generally shown (3) __________, when tea prices rose dramatically, this year, prices\nseem to have (4) __________ at a rather high level. In the subsequent four months, the (5)__________ average price showed a\ndowntrend.\nSubQuestion No : 21\nSelect the most appropriate option to fill in blank number 1.",
+   "options": [
+    "market",
+    "area",
+    "zone",
+    "field"
+   ],
+   "correct_option": 0,
+   "page": 20,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 97,
+   "question_text": "Comprehension:\nIn the following passage, some words have been deleted. Read the passage carefully and select the most appropriate option to fill in\neach blank.\nTea prices in the domestic (1)__________ continue to rule high in the current year despite the expectation of a higher production as\ncompared to the previous year. During the past three months, tea prices have been (2)__________ with the prices of other\ncompanies. Unlike last year, tea prices have generally shown (3) __________, when tea prices rose dramatically, this year, prices\nseem to have (4) __________ at a rather high level. In the subsequent four months, the (5)__________ average price showed a\ndowntrend.\nSubQuestion No : 22\nSelect the most appropriate option to fill in blank number 2.",
+   "options": [
+    "aligning",
+    "favouring",
+    "countering",
+    "encountering"
+   ],
+   "correct_option": 0,
+   "page": 20,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 98,
+   "question_text": "Comprehension:\nIn the following passage, some words have been deleted. Read the passage carefully and select the most appropriate option to fill in\neach blank.\nTea prices in the domestic (1)__________ continue to rule high in the current year despite the expectation of a higher production as\ncompared to the previous year. During the past three months, tea prices have been (2)__________ with the prices of other\ncompanies. Unlike last year, tea prices have generally shown (3) __________, when tea prices rose dramatically, this year, prices\nseem to have (4) __________ at a rather high level. In the subsequent four months, the (5)__________ average price showed a\ndowntrend.\nSubQuestion No : 23\nSelect the most appropriate option to fill in blank number 3.",
+   "options": [
+    "an inflow",
+    "an innate",
+    "a reduction",
+    "an uptrend"
+   ],
+   "correct_option": 3,
+   "page": 20,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 99,
+   "question_text": "Comprehension:\nIn the following passage, some words have been deleted. Read the passage carefully and select the most appropriate option to fill in\neach blank.\nTea prices in the domestic (1)__________ continue to rule high in the current year despite the expectation of a higher production as\ncompared to the previous year. During the past three months, tea prices have been (2)__________ with the prices of other\ncompanies. Unlike last year, tea prices have generally shown (3) __________, when tea prices rose dramatically, this year, prices\nseem to have (4) __________ at a rather high level. In the subsequent four months, the (5)__________ average price showed a\ndowntrend.\nSubQuestion No : 24\nSelect the most appropriate option to fill in blank number 4.",
+   "options": [
+    "stabilised",
+    "moderated",
+    "equated",
+    "abated"
+   ],
+   "correct_option": 0,
+   "page": 20,
+   "section": "English Comprehension",
+   "flags": [],
+   "crop": null
+  },
+  {
+   "question_number": 100,
+   "question_text": "Comprehension:\nIn the following passage, some words have been deleted. Read the passage carefully and select the most appropriate option to fill in\neach blank.\nTea prices in the domestic (1)__________ continue to rule high in the current year despite the expectation of a higher production as\ncompared to the previous year. During the past three months, tea prices have been (2)__________ with the prices of other\ncompanies. Unlike last year, tea prices have generally shown (3) __________, when tea prices rose dramatically, this year, prices\nseem to have (4) __________ at a rather high level. In the subsequent four months, the (5)__________ average price showed a\ndowntrend.\nSubQuestion No : 25\nSelect the most appropriate option to fill in blank number 5.",
+   "options": [
+    "monthly",
+    "half yearly",
+    "weekly",
+    "yearly"
+   ],
+   "correct_option": 0,
+   "page": 21,
+   "section": "English Comprehension",
+   "flags": [
+    {
+     "level": "check",
+     "reason": "contains a few drawn lines (an UNDERLINED word? a box?) - plain text loses these, verify against the PDF"
+    }
+   ],
+   "crop": "images/q100.png"
+  }
+ ]
+}

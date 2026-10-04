@@ -5,11 +5,14 @@ import Link from 'next/link';
 import { validateQuestions, normCorrect, type DraftQ } from '@/lib/validate';
 import { textFlags, type Flag } from '@/lib/flags';
 import ImageAttach from './ImageAttach';
+import { prepareImage } from '@/lib/clientImage';
 
-type DQ = DraftQ & { flags?: Flag[]; page?: number; crop?: string };
-type Draft = { title: string; description: string; source_filename: string; correct_marks: number; wrong_marks: number; section_seconds: number; questions: DQ[] };
+type DQ = DraftQ & { flags?: Flag[]; page?: number; crop?: string; section?: string };
+type Draft = { option_style: 'letters' | 'numbers'; title: string; description: string; source_filename: string; correct_marks: number; wrong_marks: number; section_seconds: number; questions: DQ[] };
 type Img = { blob: Blob; url: string; whole: boolean };
-const L = ['A', 'B', 'C', 'D'];
+/** Text or an option is missing: the question is (partly) a picture, so only a WHOLE-question screenshot can carry it. */
+const isIncomplete = (q: { question_text?: string; options?: string[] }) =>
+  !(q.question_text ?? '').trim() || [0, 1, 2, 3].some((i) => !(q.options?.[i] ?? '').trim());
 
 export default function ImportPanel() {
   const router = useRouter();
@@ -21,7 +24,10 @@ export default function ImportPanel() {
   const [images, setImages] = useState<Record<number, Img>>({});
   const [okText, setOkText] = useState<Set<number>>(new Set());
 
-  const problems = useMemo(() => (draft ? validateQuestions(draft.questions) : []), [draft]);
+  const L = draft?.option_style === 'numbers' ? ['1', '2', '3', '4'] : ['A', 'B', 'C', 'D'];
+  const problems = useMemo(
+    () => (draft ? validateQuestions(draft.questions.map((q) => ({ ...q, needs_image: isIncomplete(q) }))) : []),
+    [draft]);
   const badNumbers = useMemo(() => new Set(problems.map((p) => Number(p.match(/Question (\d+)/)?.[1])).filter(Boolean)), [problems]);
 
   // Merge flags from the offline checker (layout-aware) with text clues.
@@ -35,8 +41,11 @@ export default function ImportPanel() {
     });
     return m;
   }, [draft]);
-  const needsImage = (n: number) => !!flags.get(n)?.some((f) => f.level === 'image');
-  const unresolved = useMemo(() => [...flags.keys()].filter((n) => needsImage(n) && !images[n] && !okText.has(n)).sort((a, b) => a - b), [flags, images, okText]); // eslint-disable-line react-hooks/exhaustive-deps
+  const incompleteOf = (n: number) => { const q = draft?.questions.find((x) => x.question_number === n); return !!q && isIncomplete(q); };
+  const needsImage = (n: number) => !!flags.get(n)?.some((f) => f.level === 'image') || incompleteOf(n);
+  // resolved = a screenshot is attached (a WHOLE one if text is missing) or the admin confirmed the complete text is fine
+  const isResolved = (n: number) => { const i = images[n]; return incompleteOf(n) ? !!i?.whole : !!i || okText.has(n); };
+  const unresolved = useMemo(() => (draft?.questions ?? []).map((q) => q.question_number).filter((n) => needsImage(n) && !isResolved(n)).sort((a, b) => a - b), [draft, flags, images, okText]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => () => Object.values(images).forEach((i) => URL.revokeObjectURL(i.url)), []); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -48,14 +57,14 @@ export default function ImportPanel() {
     try {
       if (/\.json$/i.test(f.name)) {
         const j = JSON.parse(await f.text());
-        reset({ title: j.title ?? '', description: j.description ?? '', source_filename: j.source_filename ?? f.name, correct_marks: j.correct_marks ?? 1, wrong_marks: j.wrong_marks ?? 0, section_seconds: j.section_seconds ?? 900, questions: j.questions ?? [] });
+        reset({ option_style: j.option_style === 'numbers' ? 'numbers' : 'letters', title: j.title ?? '', description: j.description ?? '', source_filename: j.source_filename ?? f.name, correct_marks: j.correct_marks ?? 1, wrong_marks: j.wrong_marks ?? 0, section_seconds: j.section_seconds ?? 900, questions: j.questions ?? [] });
         if (Array.isArray(j.report?.errors)) setParseReport({ errors: j.report.errors, warnings: j.report.warnings ?? [] });
       } else {
         const fd = new FormData(); fd.append('file', f);
         const r = await fetch('/api/admin/parse', { method: 'POST', body: fd });
         const d = await r.json();
         if (!r.ok) { setMsg({ ok: false, text: d.message || 'Could not read the file.' }); return; }
-        reset({ title: d.title || f.name.replace(/\.\w+$/, ''), description: '', source_filename: d.source_filename, correct_marks: 1, wrong_marks: 0, section_seconds: 900, questions: d.questions });
+        reset({ option_style: 'letters', title: d.title || f.name.replace(/\.\w+$/, ''), description: '', source_filename: d.source_filename, correct_marks: 1, wrong_marks: 0, section_seconds: 900, questions: d.questions });
         setParseReport({ errors: d.errors, warnings: d.warnings });
       }
     } catch (e) { setMsg({ ok: false, text: 'Could not read that file. ' + (e instanceof Error ? e.message : '') }); }
@@ -68,6 +77,16 @@ export default function ImportPanel() {
   function setImage(n: number, blob: Blob) {
     setImages((p) => { if (p[n]) URL.revokeObjectURL(p[n].url); return { ...p, [n]: { blob, url: URL.createObjectURL(blob), whole: p[n]?.whole ?? true } }; });
   }
+  async function onBulk(files: FileList | null) {
+    if (!files || !draft) return;
+    let matched = 0; const skipped: string[] = [];
+    for (const f of Array.from(files)) {
+      const n = Number(f.name.match(/q0*(\d{1,3})/i)?.[1]);
+      if (!n || !draft.questions.some((q) => q.question_number === n)) { skipped.push(f.name); continue; }
+      try { setImage(n, await prepareImage(f)); matched++; } catch { skipped.push(f.name); }
+    }
+    setMsg({ ok: skipped.length === 0, text: `Attached ${matched} screenshot(s) by file name (q051.png goes to Q51).${skipped.length ? ` Skipped: ${skipped.slice(0, 5).join(', ')}` : ''}` });
+  }
   function dropImage(n: number) {
     setImages((p) => { const c = { ...p }; if (c[n]) URL.revokeObjectURL(c[n].url); delete c[n]; return c; });
   }
@@ -76,7 +95,7 @@ export default function ImportPanel() {
     if (!draft) return;
     setMsg(null); setBusy('Importing paper...');
     try {
-      const r = await fetch('/api/admin/papers', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...draft, questions: draft.questions.map(({ flags: _f, page: _p, crop: _c, ...q }) => q) }) });
+      const r = await fetch('/api/admin/papers', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...draft, questions: draft.questions.map(({ flags: _f, page: _p, crop: _c, section: _s, ...q }) => ({ ...q, needs_image: isIncomplete(q) })) }) });
       const d = await r.json();
       if (!r.ok) { setMsg({ ok: false, text: d.message || 'Import failed.', details: d.details }); return; }
       const entries = Object.entries(images).map(([n, i]) => [Number(n), i] as const);
@@ -98,7 +117,7 @@ export default function ImportPanel() {
   const chip = (n: number) => {
     if (badNumbers.has(n)) return 'border-red-600 bg-red-50 text-red-800';
     if (images[n]) return 'border-sky-600 bg-sky-50 text-sky-800';
-    if (needsImage(n) && !okText.has(n)) return 'border-saffron-600 bg-saffron-100 text-ink';
+    if (needsImage(n) && !isResolved(n)) return 'border-saffron-600 bg-saffron-100 text-ink';
     if (flags.has(n)) return 'border-slate-400 bg-slate-100 text-slate-700';
     return 'border-slate-300 bg-white text-slate-600';
   };
@@ -141,6 +160,11 @@ export default function ImportPanel() {
             </details>
           )}
 
+          <label className="block rounded-lg border border-dashed border-slate-300 bg-slate-50 p-3 text-sm font-medium">
+            Attach all the checker&apos;s crops at once - select the files from the <code>images</code> folder (file q051.png goes to Q51)
+            <input type="file" multiple accept="image/png,image/jpeg,image/webp" className="mt-1 block text-sm font-normal" onChange={(e) => { onBulk(e.target.files); e.target.value = ''; }} />
+          </label>
+
           <div className={`rounded-lg px-4 py-3 text-sm ${problems.length ? 'bg-red-50 text-red-900' : 'bg-brand-50 text-brand-900'}`}>
             {problems.length === 0
               ? <b>Text check passed: {draft.questions.length} questions, 4 sections x 25, all options and answers present.</b>
@@ -157,7 +181,7 @@ export default function ImportPanel() {
               <ul className="mt-2 space-y-0.5">
                 {[...flags.entries()].sort((a, b) => a[0] - b[0]).map(([n, fl]) => {
                   const q = draft.questions.find((x) => x.question_number === n);
-                  const state = images[n] ? 'screenshot attached' : okText.has(n) ? 'text confirmed fine' : needsImage(n) ? 'TO DO' : 'check';
+                  const state = !needsImage(n) ? 'check' : isResolved(n) ? (images[n] ? 'screenshot attached' : 'text confirmed fine') : 'TO DO';
                   return (
                     <li key={n}>
                       <button className="font-semibold text-brand-800 underline" onClick={() => setOpen(draft.questions.findIndex((x) => x.question_number === n))}>Q{n}</button>
@@ -184,10 +208,11 @@ export default function ImportPanel() {
           </p>
 
           {open !== null && draft.questions[open] && (() => {
-            const q = draft.questions[open]; const n = q.question_number; const fl = flags.get(n) ?? []; const img = images[n];
+            const q = draft.questions[open]; const n = q.question_number; const fl = flags.get(n) ?? []; const img = images[n]; const inc = isIncomplete(q);
             return (
               <div className="space-y-3 rounded-lg border border-slate-200 p-4">
                 <p className="text-sm font-semibold">Question {n}{q.page ? ` - PDF page ${q.page}` : ''}</p>
+                {inc && <p className="rounded bg-red-50 px-3 py-2 text-sm text-red-900">The text or an option is missing here (probably pictures). Attach a <b>whole-question</b> screenshot that includes the options {L[0]}-{L[3]}, or type the missing text above.</p>}
                 {fl.length > 0 && <ul className="rounded bg-saffron-100 px-3 py-2 text-sm">{fl.map((f, i) => <li key={i}>{f.level === 'image' ? 'Needs screenshot' : 'Check'}: {f.reason}</li>)}</ul>}
                 {q.crop && <p className="text-xs text-slate-600">The checker saved a ready-made crop of this question: <code>{q.crop}</code> in your output folder - you can paste/upload that.</p>}
                 <textarea className="input min-h-20" value={q.question_text} onChange={(e) => edit(open, { question_text: e.target.value })} />
@@ -209,7 +234,7 @@ export default function ImportPanel() {
                       <div className="space-y-1 text-sm">
                         <label className="flex items-start gap-2"><input type="radio" className="mt-1" checked={img.whole} onChange={() => setImages((p) => ({ ...p, [n]: { ...p[n], whole: true } }))} />
                           <span><b>Whole question</b> - my screenshot includes the question <u>and</u> the options (a)-(d). Candidates see the screenshot + A/B/C/D buttons only. <i>Recommended.</i></span></label>
-                        <label className="flex items-start gap-2"><input type="radio" className="mt-1" checked={!img.whole} onChange={() => setImages((p) => ({ ...p, [n]: { ...p[n], whole: false } }))} />
+                        <label className="flex items-start gap-2"><input type="radio" className="mt-1" disabled={inc} checked={!img.whole} onChange={() => setImages((p) => ({ ...p, [n]: { ...p[n], whole: false } }))} />
                           <span><b>Only the table/figure</b> - show the question text and option text above/below it as usual.</span></label>
                       </div>
                       <button className="text-sm font-medium text-red-700 hover:underline" onClick={() => dropImage(n)}>Remove screenshot</button>
@@ -217,8 +242,8 @@ export default function ImportPanel() {
                   ) : (
                     <>
                       <ImageAttach onImage={(b) => setImage(n, b)} />
-                      <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={okText.has(n)} onChange={(e) => setOkText((s) => { const c = new Set(s); if (e.target.checked) c.add(n); else c.delete(n); return c; })} />
-                        I checked the PDF: the text above is complete and correct - no screenshot needed.</label>
+                      {!inc && <label className="flex items-center gap-2 text-sm"><input type="checkbox" checked={okText.has(n)} onChange={(e) => setOkText((s) => { const c = new Set(s); if (e.target.checked) c.add(n); else c.delete(n); return c; })} />
+                        I checked the PDF: the text above is complete and correct - no screenshot needed.</label>}
                     </>
                   )}
                 </div>

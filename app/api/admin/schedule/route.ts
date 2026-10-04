@@ -16,10 +16,11 @@ async function assertPaperValid(paperId: string) {
   const { data: p } = await db().from('papers').select('id,section_count,questions_per_section').eq('id', paperId).maybeSingle();
   if (!p) throw new HttpError(404, 'NOT_FOUND', 'Paper not found.');
   const qs = must(await db().from('questions')
-    .select('question_number,question_text,option_a,option_b,option_c,option_d,correct_option,section').eq('paper_id', paperId)) as Record<string, any>[]; // eslint-disable-line @typescript-eslint/no-explicit-any
+    .select('question_number,question_text,option_a,option_b,option_c,option_d,correct_option,section,image_path,image_whole').eq('paper_id', paperId)) as Record<string, any>[]; // eslint-disable-line @typescript-eslint/no-explicit-any
   const errors = validateQuestions(qs.map((q) => ({
     question_number: q.question_number, question_text: q.question_text,
     options: [q.option_a, q.option_b, q.option_c, q.option_d], correct_option: q.correct_option,
+    needs_image: !!q.image_path && q.image_whole !== false, // empty text is fine ONLY if a whole-question screenshot is attached
   })), { sections: p.section_count, perSection: p.questions_per_section });
   const wrongSection = qs.filter((q) => q.section !== Math.floor((q.question_number - 1) / p.questions_per_section) + 1);
   if (wrongSection.length) errors.push('Some questions are assigned to the wrong section.');
