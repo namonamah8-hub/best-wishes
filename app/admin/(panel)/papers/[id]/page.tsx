@@ -5,6 +5,7 @@ import { UUID_RE } from '@/lib/http';
 import { textFlags } from '@/lib/flags';
 import QuestionImageRow from '@/components/admin/QuestionImageRow';
 import HindiPanel from '@/components/admin/HindiPanel';
+import MarkingForm from '@/components/admin/MarkingForm';
 import { hindiComplete } from '@/lib/lang';
 
 export const dynamic = 'force-dynamic';
@@ -33,6 +34,10 @@ export default async function PaperDetail({ params }: { params: { id: string } }
       {suspicious.length > 0 && (
         <p className="rounded-lg bg-saffron-100 px-4 py-3 text-sm"><b>Possibly missing a screenshot:</b> Q{suspicious.map((q) => q.question_number).join(', Q')}</p>
       )}
+      <section className="space-y-3">
+        <h2 className="font-serif text-2xl font-bold text-brand-900">Marking scheme</h2>
+        <div className="card p-5"><MarkingForm paperId={paper.id} correct={Number(paper.correct_marks)} wrong={Number(paper.wrong_marks)} total={qs.length} /></div>
+      </section>
       <section className="space-y-4 pb-2">
         <div>
           <h2 className="font-serif text-2xl font-bold text-brand-900">Hindi version</h2>

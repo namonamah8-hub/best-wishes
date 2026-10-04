@@ -586,6 +586,12 @@ def main():
     ap.add_argument("--out", default=None, help="output folder (default build/<pdf-name>)")
     ap.add_argument("--expected", type=int, default=100)
     ap.add_argument("--format", choices=["auto", "letters", "ticks"], default="auto", help="PDF layout (default: auto-detect)")
+    ap.add_argument("--correct-marks", type=float, default=2, help="marks per correct answer (default 2)")
+    ap.add_argument("--wrong-marks", type=float, default=-0.5, help="marks per wrong answer, 0 or negative (default -0.5)")
+    ap.add_argument("--upload", default=None, metavar="SITE_URL", help="after checking, upload the paper + attach every screenshot automatically (e.g. https://your-site.vercel.app)")
+    ap.add_argument("--hindi-for", default=None, metavar="PAPER_ID", help="with --upload: this PDF is the HINDI version of an already imported paper")
+    ap.add_argument("--images", choices=["all", "needed"], default="all", help="with --upload: attach every crop (default) or only questions that cannot work as text")
+    ap.add_argument("--force", action="store_true", help="with --upload: import even if a paper with the same title exists")
     ap.add_argument("--dpi", type=int, default=170, help="resolution of the crops")
     ap.add_argument("--no-crops", action="store_true", help="do not render crop images")
     ap.add_argument("--all-images", action="store_true", help="treat EVERY question as a screenshot (use for Hindi PDFs whose text comes out garbled): crops for all questions")
@@ -689,7 +695,7 @@ def main():
     if found != args.expected:
         errors.insert(0, f"Detected {found} questions but expected {args.expected}.")
     title = args.title or name.replace("-", " ").replace("_", " ")
-    paper = dict(title=title, description="", source_filename=os.path.basename(args.pdf), correct_marks=1, wrong_marks=0,
+    paper = dict(title=title, description="", source_filename=os.path.basename(args.pdf), correct_marks=args.correct_marks, wrong_marks=args.wrong_marks,
                  option_style="numbers" if fmt == "ticks" else "letters",
                  report=dict(errors=errors, warnings=warnings), questions=questions)
     json.dump(paper, open(os.path.join(folder, "paper.json"), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
@@ -713,6 +719,14 @@ def main():
     open(os.path.join(folder, "report.txt"), "w", encoding="utf-8").write(report)
     print(report)
     print(f"\nOutput folder: {folder}\n  - open {os.path.join(folder, 'review.html')} in your browser to eyeball everything\n  - upload {os.path.join(folder, 'paper.json')} in Admin > Papers")
+    if args.upload:
+        if errors:
+            print("\nNot uploading: fix the problems above first (the answers must all be read correctly).")
+            sys.exit(1)
+        print("\n--- uploading automatically ---")
+        import upload_paper
+        sys.exit(upload_paper.run(folder, args.upload, hindi_for=args.hindi_for, images=args.images, force=args.force))
+    print(f"  - or upload automatically:  python scripts/upload_paper.py {folder} --site https://YOUR-SITE")
     sys.exit(1 if errors else 0)
 
 

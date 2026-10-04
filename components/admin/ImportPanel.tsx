@@ -57,14 +57,14 @@ export default function ImportPanel() {
     try {
       if (/\.json$/i.test(f.name)) {
         const j = JSON.parse(await f.text());
-        reset({ option_style: j.option_style === 'numbers' ? 'numbers' : 'letters', title: j.title ?? '', description: j.description ?? '', source_filename: j.source_filename ?? f.name, correct_marks: j.correct_marks ?? 1, wrong_marks: j.wrong_marks ?? 0, section_seconds: j.section_seconds ?? 900, questions: j.questions ?? [] });
+        reset({ option_style: j.option_style === 'numbers' ? 'numbers' : 'letters', title: j.title ?? '', description: j.description ?? '', source_filename: j.source_filename ?? f.name, correct_marks: j.correct_marks ?? 2, wrong_marks: j.wrong_marks ?? -0.5, section_seconds: j.section_seconds ?? 900, questions: j.questions ?? [] });
         if (Array.isArray(j.report?.errors)) setParseReport({ errors: j.report.errors, warnings: j.report.warnings ?? [] });
       } else {
         const fd = new FormData(); fd.append('file', f);
         const r = await fetch('/api/admin/parse', { method: 'POST', body: fd });
         const d = await r.json();
         if (!r.ok) { setMsg({ ok: false, text: d.message || 'Could not read the file.' }); return; }
-        reset({ option_style: 'letters', title: d.title || f.name.replace(/\.\w+$/, ''), description: '', source_filename: d.source_filename, correct_marks: 1, wrong_marks: 0, section_seconds: 900, questions: d.questions });
+        reset({ option_style: 'letters', title: d.title || f.name.replace(/\.\w+$/, ''), description: '', source_filename: d.source_filename, correct_marks: 2, wrong_marks: -0.5, section_seconds: 900, questions: d.questions });
         setParseReport({ errors: d.errors, warnings: d.warnings });
       }
     } catch (e) { setMsg({ ok: false, text: 'Could not read that file. ' + (e instanceof Error ? e.message : '') }); }

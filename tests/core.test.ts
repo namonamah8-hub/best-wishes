@@ -98,3 +98,15 @@ test('pictures: empty text is allowed only for questions marked needs_image; opt
   pic.questions[1].correct_option = null; pic.questions[1].needs_image = true;
   assert.ok(validatePaperInput(pic).errors.some((e: string) => /Question 2/.test(e)));   // the answer is ALWAYS required
 });
+
+test('marking scheme +2 / -0.5 is accepted; bad schemes are rejected', () => {
+  const sample = JSON.parse(fs.readFileSync('data/sample-paper.json', 'utf8'));
+  const ok = validatePaperInput({ ...sample, correct_marks: 2, wrong_marks: -0.5 });
+  assert.deepEqual(ok.errors, []);
+  assert.equal(ok.clean?.correct_marks, 2); assert.equal(ok.clean?.wrong_marks, -0.5);
+  assert.ok(validatePaperInput({ ...sample, correct_marks: 2, wrong_marks: 0.5 }).errors.length > 0);   // a wrong answer can never ADD marks
+  assert.ok(validatePaperInput({ ...sample, correct_marks: 0, wrong_marks: 0 }).errors.length > 0);
+  // the exact formula the database uses: correct x correct_marks + wrong x wrong_marks
+  const score = (c: number, w: number) => c * 2 + w * -0.5;
+  assert.equal(score(74, 18), 139); assert.equal(score(100, 0), 200); assert.equal(score(2, 1), 3.5);
+});

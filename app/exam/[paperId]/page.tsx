@@ -33,7 +33,8 @@ export default async function ExamPage({ params }: { params: { paperId: string }
   return (
     <ExamClient
       paper={{ id: paper.id, title: paper.title, totalQuestions: paper.total_questions, sections: paper.section_count,
-        perSection: paper.questions_per_section, sectionMinutes: paper.section_seconds / 60 }}
+        perSection: paper.questions_per_section, sectionMinutes: paper.section_seconds / 60,
+        correctMarks: Number(paper.correct_marks), wrongMarks: Number(paper.wrong_marks) }}
       candidateName={cand.name}
       initialAttemptId={att?.id ?? null}
       hasHindi={hasHindi}

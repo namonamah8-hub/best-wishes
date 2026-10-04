@@ -2,7 +2,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-type Paper = { id: string; title: string; totalQuestions: number; sections: number; perSection: number; sectionMinutes: number };
+type Paper = { id: string; title: string; totalQuestions: number; sections: number; perSection: number; sectionMinutes: number; correctMarks?: number; wrongMarks?: number };
 type Q = { id: string; number: number; text: string; options: string[]; image: string | null; imageWhole: boolean };
 type Sec = { number: number; state: 'locked' | 'current' | 'upcoming'; answered: number; total: number };
 type State = {
@@ -149,6 +149,12 @@ export default function ExamClient({ paper, candidateName, initialAttemptId, has
                 </li>
               ))}
             </ul>
+            {paper.correctMarks !== undefined && (
+              <p className="mt-4 rounded-lg bg-slate-50 px-4 py-3 text-sm">
+                <b>Marking:</b> +{paper.correctMarks} for each correct answer
+                {paper.wrongMarks ? <>, {paper.wrongMarks} for each wrong answer</> : null}, no marks for unanswered questions. Maximum {paper.totalQuestions * (paper.correctMarks ?? 0)}.
+              </p>
+            )}
             <div className="mt-5 rounded-lg bg-saffron-100 p-4 text-sm leading-relaxed">
               <b>Important.</b> Once a section&apos;s time expires it is locked for good: you cannot view or change its answers.
               The next section opens by itself. Refreshing, closing the tab or losing internet does <b>not</b> pause the clock.

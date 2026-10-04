@@ -236,6 +236,19 @@ begin
   return pid;
 end $$;
 
+-- Change a paper's marking scheme AND re-score every finished attempt of that paper (one transaction).
+create or replace function update_marking(p_paper uuid, p_correct numeric, p_wrong numeric) returns int
+language plpgsql as $$
+declare n int;
+begin
+  update papers set correct_marks = p_correct, wrong_marks = p_wrong where id = p_paper;
+  if not found then raise exception 'PAPER_NOT_FOUND'; end if;
+  update attempts set score = correct_count * p_correct + wrong_count * p_wrong
+  where paper_id = p_paper and status <> 'IN_PROGRESS' and correct_count is not null;
+  get diagnostics n = row_count;
+  return n;
+end $$;
+
 -- Attach the Hindi text of a paper in one transaction (matched by question number).
 create or replace function apply_hindi(p_paper uuid, p jsonb) returns int
 language plpgsql as $$
@@ -266,3 +279,4 @@ revoke all on function finalize_attempt(uuid, text) from public, anon, authentic
 revoke all on function finalize_expired()           from public, anon, authenticated;
 revoke all on function import_paper(jsonb)          from public, anon, authenticated;
 revoke all on function apply_hindi(uuid, jsonb)     from public, anon, authenticated;
+revoke all on function update_marking(uuid, numeric, numeric) from public, anon, authenticated;
