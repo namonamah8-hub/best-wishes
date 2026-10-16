@@ -4,6 +4,7 @@ import { getCandidate } from '@/lib/auth';
 import { loadOwned, syncAttempt, buildResultRows } from '@/lib/attempts';
 import { HttpError, UUID_RE } from '@/lib/http';
 import { LETTERS } from '@/lib/config';
+import ReviewList from '@/components/ReviewList';
 
 export const dynamic = 'force-dynamic';
 
@@ -18,8 +19,6 @@ export default async function ResultPage({ params }: { params: { attemptId: stri
   const a = await syncAttempt(loaded.attempt, loaded.paper);
   if (a.status === 'IN_PROGRESS') redirect(`/exam/${a.paper_id}`); // correct answers are never shown before submission
   const rows = await buildResultRows(a, loaded.paper);
-  const wrong = rows.filter((r) => r.status === 'WRONG');
-  const skipped = rows.filter((r) => r.status === 'UNANSWERED').map((r) => r.number);
   const labels = loaded.paper.option_style === 'numbers' ? ['1', '2', '3', '4'] : LETTERS;
   const total = loaded.paper.total_questions * Number(loaded.paper.correct_marks);
   const stats: { section: number; correct: number; wrong: number; unanswered: number }[] = a.section_stats ?? [];
@@ -40,6 +39,7 @@ export default async function ResultPage({ params }: { params: { attemptId: stri
         {Number(loaded.paper.wrong_marks) !== 0 && (
           <p className="mt-3 text-xs text-slate-500">Marking: +{Number(loaded.paper.correct_marks)} correct, {Number(loaded.paper.wrong_marks)} wrong, 0 unanswered.</p>
         )}
+        <a href="#review" className="btn btn-primary mt-4">Review your paper: what you got right, wrong and skipped</a>
       </div>
 
       <section>
@@ -56,28 +56,7 @@ export default async function ResultPage({ params }: { params: { attemptId: stri
         </div>
       </section>
 
-      <section>
-        <h2 className="font-serif text-xl font-bold">Wrong answers ({wrong.length})</h2>
-        {wrong.length === 0 ? <p className="card mt-3 p-5 text-slate-600">No wrong answers. Well done.</p> : (
-          <div className="mt-3 space-y-3">
-            {wrong.map((r) => (
-              <div key={r.number} className="card p-5">
-                <p className="text-sm font-semibold text-slate-500">Question {r.number} &middot; Section {r.section}</p>
-                {!r.imageWhole && <p className="mt-1 whitespace-pre-line font-medium">{r.text}</p>}
-                {r.image && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={`/api/attempts/${a.id}/image/${r.id}`} alt={`Question ${r.number}`} loading="lazy" className="mt-2 max-w-full rounded-lg border border-slate-200" />
-                )}
-                <div className="mt-3 grid gap-2 text-sm sm:grid-cols-2">
-                  <p className="rounded-lg bg-red-50 px-3 py-2 text-red-900"><b>Your answer: {labels[r.yourOption!]}</b>{!r.imageWhole && <> &mdash; {r.options[r.yourOption!]}</>}</p>
-                  <p className="rounded-lg bg-brand-50 px-3 py-2 text-brand-900"><b>Correct answer: {labels[r.correctOption]}</b>{!r.imageWhole && <> &mdash; {r.options[r.correctOption]}</>}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-        {skipped.length > 0 && <p className="mt-4 text-sm text-slate-600">Unanswered: Q{skipped.join(', Q')}</p>}
-      </section>
+      <ReviewList rows={rows} attemptId={a.id} labels={[...labels]} correctMarks={Number(loaded.paper.correct_marks)} wrongMarks={Number(loaded.paper.wrong_marks)} />
 
       <div className="flex gap-3">
         <Link href="/" className="btn btn-primary">Back to today&apos;s tests</Link>

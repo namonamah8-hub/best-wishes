@@ -17,6 +17,7 @@ export const GET = handle(async (_req, { params }) => {
       correct: a.correct_count, wrong: a.wrong_count, unanswered: a.unanswered_count, sections: a.section_stats,
     },
     wrongAnswers: rows.filter((r) => r.status === 'WRONG').map((r) => ({ ...r, imageUrl: r.image ? `/api/attempts/${a.id}/image/${r.id}` : null })),
+    review: rows.map((r) => ({ ...r, imageUrl: r.image ? `/api/attempts/${a.id}/image/${r.id}` : null })),
     unanswered: rows.filter((r) => r.status === 'UNANSWERED').map((r) => r.number),
   });
 });
