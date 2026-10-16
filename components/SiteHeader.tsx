@@ -14,6 +14,7 @@ export default async function SiteHeader() {
         {cand && (
           <nav className="flex items-center gap-5 text-sm">
             <Link href="/" className="font-medium text-slate-700 hover:text-brand-700">Today&apos;s tests</Link>
+            <Link href="/my-results" className="font-medium text-slate-700 hover:text-brand-700">My results</Link>
             <Link href="/leaderboard" className="font-medium text-slate-700 hover:text-brand-700">Results board</Link>
             <span className="hidden text-slate-400 sm:inline">|</span>
             <span className="hidden text-slate-600 sm:inline">{cand.name}</span>

@@ -1,7 +1,7 @@
 import { handle, uuid, HttpError } from '@/lib/http';
 import { requireCandidate } from '@/lib/auth';
 import { db } from '@/lib/supabase';
-import { loadOwned, finalize } from '@/lib/attempts';
+import { loadForViewing, finalize } from '@/lib/attempts';
 import { computeTiming } from '@/lib/exam';
 import { imageResponse } from '@/lib/images';
 import { asLang, view } from '@/lib/lang';
@@ -15,7 +15,7 @@ export const dynamic = 'force-dynamic';
  */
 export const GET = handle(async (_req, { params }) => {
   const cand = await requireCandidate();
-  const { attempt, paper } = await loadOwned(uuid(params.id), cand.id);
+  const { attempt, paper } = await loadForViewing(uuid(params.id), cand.id); // owner, or someone who finished the same test
   const qid = uuid(params.qid, 'question');
   const { data: q } = await db().from('questions').select('paper_id,section,image_path,image_whole,question_text_hi,option_a_hi,option_b_hi,option_c_hi,option_d_hi,image_path_hi,image_whole_hi').eq('id', qid).maybeSingle();
   const imagePath = q ? view(q, asLang(attempt.lang)).imagePath : null;

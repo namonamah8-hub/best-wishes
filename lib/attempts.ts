@@ -20,6 +20,27 @@ export async function loadOwned(attemptId: string, candidateId: string) {
   return { attempt: a as Attempt, paper };
 }
 
+/**
+ * Who may open a paper review?
+ *  - the candidate who took it, always;
+ *  - any other candidate, but ONLY for a finished attempt AND only if they have finished the SAME test themselves
+ *    (so nobody can read the questions/answers of a test they have not taken yet).
+ */
+export async function loadForViewing(attemptId: string, viewerId: string) {
+  const { data: a, error } = await db().from('attempts').select('*').eq('id', attemptId).maybeSingle();
+  if (error) throw new Error(error.message);
+  if (!a) throw new HttpError(404, 'NOT_FOUND', 'Attempt not found.');
+  const paper = must(await db().from('papers').select('*').eq('id', a.paper_id).single()) as Paper;
+  const isOwner = a.candidate_id === viewerId;
+  if (!isOwner) {
+    if (a.status === 'IN_PROGRESS') throw new HttpError(403, 'NOT_FINISHED', 'This candidate has not finished the test yet.');
+    const { data: mine } = await db().from('attempts').select('id')
+      .eq('candidate_id', viewerId).eq('paper_id', a.paper_id).neq('status', 'IN_PROGRESS').maybeSingle();
+    if (!mine) throw new HttpError(403, 'TAKE_TEST_FIRST', 'Finish this test yourself to see how others answered it.');
+  }
+  return { attempt: a as Attempt, paper, isOwner };
+}
+
 export async function finalize(attemptId: string, status: 'COMPLETED' | 'AUTO_SUBMITTED'): Promise<Attempt> {
   const { data, error } = await db().rpc('finalize_attempt', { p_attempt: attemptId, p_status: status });
   if (error) throw new Error(error.message);

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { getCandidate } from '@/lib/auth';
+import { db } from '@/lib/supabase';
 import { getActivity, getInProgress, listPapersWithAttempts } from '@/lib/queries';
 import { UUID_RE } from '@/lib/http';
 import ActivityTable from '@/components/ActivityTable';
@@ -9,7 +10,10 @@ import AutoRefresh from '@/components/AutoRefresh';
 export const dynamic = 'force-dynamic';
 
 export default async function Leaderboard({ searchParams }: { searchParams: { paper?: string } }) {
-  if (!(await getCandidate())) redirect('/');
+  const cand = await getCandidate();
+  if (!cand) redirect('/');
+  const { data: mine } = await db().from('attempts').select('paper_id,status').eq('candidate_id', cand.id);
+  const finishedPapers = (mine ?? []).filter((a) => a.status !== 'IN_PROGRESS').map((a) => a.paper_id as string);
   const papers = await listPapersWithAttempts();
   const paperId = searchParams.paper && UUID_RE.test(searchParams.paper) ? searchParams.paper : undefined;
   const [rows, live] = await Promise.all([
@@ -30,7 +34,7 @@ export default async function Leaderboard({ searchParams }: { searchParams: { pa
         ))}
       </div>
       {live.length > 0 && <p className="text-sm text-slate-600">Taking a test now: {live.map((l) => l.name).join(', ')}</p>}
-      <ActivityTable rows={rows} ranked={!!paperId} />
+      <ActivityTable rows={rows} ranked={!!paperId} viewerId={cand.id} finishedPapers={finishedPapers} />
       {paperId && <p className="text-xs text-slate-500">Ranked by score; ties are broken by who finished first.</p>}
     </div>
   );

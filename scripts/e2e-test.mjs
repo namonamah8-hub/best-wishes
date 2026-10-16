@@ -120,7 +120,7 @@ ok(a.correct === 2 && a.wrong === 1 && a.unanswered === 97, `counts: 2 correct, 
 ok(a.score === 1.5, `score = 2 x (+1) + 1 x (-0.5) = 1.5 (got ${a.score})`);
 ok(res.wrongAnswers.length === 1 && res.wrongAnswers[0].number === 2, 'wrong-answer analysis lists Q2');
 ok(a.sections.length === 4 && a.sections[0].correct === 1 && a.sections[0].wrong === 1, 'section-wise stats stored');
-ok((await other.call('GET', `/api/results/${attemptId}`)).status === 404, "another candidate cannot see my analysis");
+ok((await other.call('GET', `/api/results/${attemptId}`)).status === 403, "a candidate who has NOT finished this test cannot open my paper (403)");
 const board = (await cand.call('GET', `/api/leaderboard?paper=${paperId}`)).json;
 ok(board.rows.some((x) => x.id === attemptId) && !/mobile|email/i.test(JSON.stringify(board)), 'attempt shows on the results board without private details');
 

@@ -36,6 +36,7 @@ export default async function Home() {
 
   const papers = await getTodaysPapers();
   const { data: mine } = await db().from('attempts').select('id,paper_id,status').eq('candidate_id', cand.id);
+  const finishedPapers = (mine ?? []).filter((a) => a.status !== 'IN_PROGRESS').map((a) => a.paper_id as string);
   const byPaper = new Map((mine ?? []).map((a) => [a.paper_id as string, a as { id: string; status: string }]));
   const [recent, live] = await Promise.all([getActivity({ order: 'recent', limit: 10 }), getInProgress()]);
 
@@ -88,9 +89,9 @@ export default async function Home() {
       <section>
         <div className="mb-3 flex items-end justify-between">
           <h2 className="font-serif text-xl font-bold">Latest results</h2>
-          <Link href="/leaderboard" className="text-sm font-medium text-brand-700 hover:underline">Full results board</Link>
+          <span className="flex gap-5 text-sm font-medium"><Link href="/my-results" className="text-brand-700 hover:underline">My results</Link><Link href="/leaderboard" className="text-brand-700 hover:underline">Full results board</Link></span>
         </div>
-        <ActivityTable rows={recent} />
+        <ActivityTable rows={recent} viewerId={cand.id} finishedPapers={finishedPapers} />
       </section>
     </div>
   );

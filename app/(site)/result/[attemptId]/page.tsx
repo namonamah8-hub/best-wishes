@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { redirect, notFound } from 'next/navigation';
 import { getCandidate } from '@/lib/auth';
-import { loadOwned, syncAttempt, buildResultRows } from '@/lib/attempts';
+import { loadForViewing, syncAttempt, buildResultRows } from '@/lib/attempts';
 import { HttpError, UUID_RE } from '@/lib/http';
 import { LETTERS } from '@/lib/config';
 import ReviewList from '@/components/ReviewList';
@@ -13,10 +13,15 @@ export default async function ResultPage({ params }: { params: { attemptId: stri
   if (!cand) redirect('/');
   if (!UUID_RE.test(params.attemptId)) notFound();
   let loaded;
-  try { loaded = await loadOwned(params.attemptId, cand.id); }
-  catch (e) { if (e instanceof HttpError) notFound(); throw e; }
+  try { loaded = await loadForViewing(params.attemptId, cand.id); }
+  catch (e) {
+    if (e instanceof HttpError && e.status === 403) return <Locked message={e.message} />;
+    if (e instanceof HttpError) notFound();
+    throw e;
+  }
 
-  const a = await syncAttempt(loaded.attempt, loaded.paper);
+  const isOwner = loaded.isOwner;
+  const a = isOwner ? await syncAttempt(loaded.attempt, loaded.paper) : loaded.attempt;
   if (a.status === 'IN_PROGRESS') redirect(`/exam/${a.paper_id}`); // correct answers are never shown before submission
   const rows = await buildResultRows(a, loaded.paper);
   const labels = loaded.paper.option_style === 'numbers' ? ['1', '2', '3', '4'] : LETTERS;
@@ -28,8 +33,9 @@ export default async function ResultPage({ params }: { params: { attemptId: stri
       <div className="card p-6">
         <p className="text-sm text-slate-500">{loaded.paper.title}</p>
         <h1 className="font-serif text-3xl font-bold text-brand-900">
-          {a.status === 'AUTO_SUBMITTED' ? 'Time up - exam submitted' : 'Exam completed'}
+          {isOwner ? (a.status === 'AUTO_SUBMITTED' ? 'Time up - exam submitted' : 'Exam completed') : `${a.candidate_name}'s paper`}
         </h1>
+        {!isOwner && <p className="mt-2 rounded-lg bg-saffron-100 px-3 py-2 text-sm">You are looking at how <b>{a.candidate_name}</b> answered this test. You can see this because you have finished it too.</p>}
         <div className="mt-5 grid grid-cols-2 gap-4 sm:grid-cols-4">
           <Stat label="Score" value={`${Number(a.score)} / ${total}`} big />
           <Stat label="Correct" value={a.correct_count} tone="text-brand-700" />
@@ -59,7 +65,8 @@ export default async function ResultPage({ params }: { params: { attemptId: stri
       <ReviewList rows={rows} attemptId={a.id} labels={[...labels]} correctMarks={Number(loaded.paper.correct_marks)} wrongMarks={Number(loaded.paper.wrong_marks)} />
 
       <div className="flex gap-3">
-        <Link href="/" className="btn btn-primary">Back to today&apos;s tests</Link>
+        <Link href="/" className="btn btn-primary">Back to home</Link>
+        <Link href="/my-results" className="btn btn-ghost">My results</Link>
         <Link href={`/leaderboard?paper=${a.paper_id}`} className="btn btn-ghost">See the results board</Link>
       </div>
     </div>
@@ -71,6 +78,16 @@ function Stat({ label, value, tone = '', big = false }: { label: string; value: 
     <div className="rounded-lg bg-slate-50 p-4">
       <p className="text-xs text-slate-500">{label}</p>
       <p className={`mt-1 font-serif font-bold ${big ? 'text-3xl' : 'text-3xl'} ${tone}`}>{value}</p>
+    </div>
+  );
+}
+
+function Locked({ message }: { message: string }) {
+  return (
+    <div className="card mx-auto max-w-lg p-8 text-center">
+      <h1 className="font-serif text-2xl font-bold text-brand-900">This paper is locked for you</h1>
+      <p className="mt-2 text-slate-600">{message}</p>
+      <Link href="/" className="btn btn-primary mt-6">Back to home</Link>
     </div>
   );
 }

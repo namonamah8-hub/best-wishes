@@ -1,13 +1,13 @@
 import { handle, ok, uuid, HttpError } from '@/lib/http';
 import { requireCandidate } from '@/lib/auth';
-import { loadOwned, syncAttempt, buildResultRows } from '@/lib/attempts';
+import { loadForViewing, syncAttempt, buildResultRows } from '@/lib/attempts';
 
 export const dynamic = 'force-dynamic';
 
 export const GET = handle(async (_req, { params }) => {
   const cand = await requireCandidate();
-  const { attempt, paper } = await loadOwned(uuid(params.id), cand.id);
-  const a = await syncAttempt(attempt, paper);
+  const { attempt, paper, isOwner } = await loadForViewing(uuid(params.id), cand.id);
+  const a = isOwner ? await syncAttempt(attempt, paper) : attempt;
   if (a.status === 'IN_PROGRESS') throw new HttpError(403, 'NOT_SUBMITTED', 'Results are available after you submit.');
   const rows = await buildResultRows(a, paper);
   return ok({

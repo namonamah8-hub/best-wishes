@@ -22,7 +22,7 @@ export async function isScheduledToday(paperId: string): Promise<boolean> {
 }
 
 export type ActivityRow = {
-  id: string; name: string; paperId: string; paperTitle: string; total: number; examDate: string;
+  id: string; candidateId: string; name: string; paperId: string; paperTitle: string; total: number; examDate: string;
   score: number; correct: number; wrong: number; unanswered: number;
   sections: { section: number; correct: number; wrong: number; unanswered: number }[];
   submittedAt: string | null; status: string;
@@ -32,7 +32,7 @@ export type ActivityRow = {
 export async function getActivity(opts: { paperId?: string; order: 'score' | 'recent'; limit?: number }): Promise<ActivityRow[]> {
   await db().rpc('finalize_expired'); // auto-submit anything whose time is over
   let q = db().from('attempts')
-    .select('id,candidate_name,paper_id,exam_date,score,correct_count,wrong_count,unanswered_count,section_stats,submitted_at,status,papers(title,total_questions,correct_marks)')
+    .select('id,candidate_id,candidate_name,paper_id,exam_date,score,correct_count,wrong_count,unanswered_count,section_stats,submitted_at,status,papers(title,total_questions,correct_marks)')
     .in('status', ['COMPLETED', 'AUTO_SUBMITTED']);
   if (opts.paperId) q = q.eq('paper_id', opts.paperId);
   q = opts.order === 'score'
@@ -40,7 +40,7 @@ export async function getActivity(opts: { paperId?: string; order: 'score' | 're
     : q.order('submitted_at', { ascending: false });
   const rows = must(await q.limit(opts.limit ?? 50)) as any[];
   return rows.map((r) => ({
-    id: r.id, name: r.candidate_name, paperId: r.paper_id, paperTitle: r.papers?.title ?? '',
+    id: r.id, candidateId: r.candidate_id, name: r.candidate_name, paperId: r.paper_id, paperTitle: r.papers?.title ?? '',
     total: (r.papers?.total_questions ?? 0) * Number(r.papers?.correct_marks ?? 1),
     examDate: r.exam_date, score: Number(r.score ?? 0), correct: r.correct_count ?? 0, wrong: r.wrong_count ?? 0,
     unanswered: r.unanswered_count ?? 0, sections: r.section_stats ?? [], submittedAt: r.submitted_at, status: r.status,
